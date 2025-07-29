@@ -24,7 +24,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 opacity: 0;
                 transform: scale(0.8);
                 animation: zoomIn 0.3s ease forwards;
-                border-radius: 10px;
+                border-radius: 15px;
+                max-width: 80%;
+                max-height: 80%;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.4);
             }
             @keyframes fadeIn {
                 from { background: rgba(0, 0, 0, 0); }
