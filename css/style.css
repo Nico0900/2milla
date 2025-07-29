@@ -20,3 +20,79 @@ body {
 }
 
 /* fin de flecha en movimiento de tipo flotante */
+
+
+/* Animacion de Galeria de tratados */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* fin de Animacion de Galeria de tratados */
+
+.btn-tratado {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    font-family: 'DynaPuff', cursive;
+    font-size: 1.2em;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 6px 18px rgba(0, 114, 255, 0.35);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-width: 180px;
+}
+
+.btn-tratado:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 24px rgba(0, 114, 255, 0.5);
+}
+
+.btn-tratado.active {
+    background: linear-gradient(135deg, #ff6ec4, #7873f5);
+    box-shadow: 0 10px 24px rgba(120, 115, 245, 0.5);
+}
+
+
+
+/* footer */
+
+.footer {
+    font-family: 'Delius Unicase', cursive;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.social-link img {
+    /* Asegura que los íconos sean blancos */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-link:hover img,
+.social-link:focus img {
+    /* Color azul claro */
+    transform: scale(1.2);
+}
+
+.footer-text {
+    color: #aab4c9;
+    font-weight: 500;
+}
+
+.footer-text.small {
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
