@@ -79,9 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 gap: 6px;
                 transition: background-color 0.3s;
             }
-            #download-modal-btn:hover {
-                background: rgba(255,255,255,0.2);
-            }
         `;
         document.head.appendChild(style);
     };
@@ -142,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         for (let i = 1; i <= count; i++) {
             const col = document.createElement("div");
-            col.className = "col-6 col-md-3 col-lg-2 d-flex justify-content-center fade-up";
+            col.className = "col-6 col-md-4 col-lg-3 d-flex justify-content-center fade-up";
             col.style.animationDelay = `${(i - 1) * 50}ms`;
 
             const imgContainer = document.createElement("div");
