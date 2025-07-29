@@ -65,13 +65,12 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             #download-modal-btn {
                 position: absolute;
-                bottom: 20px;
-                left: 30px;
-                font-size: 24px;
+                top: 20px;
+                right: 60px;
+                size: 18px;
                 color: white;
-                background: rgba(0,0,0,0.4);
                 border-radius: 6px;
-                padding: 6px 10px;
+                padding: 18px 10px;
                 cursor: pointer;
                 z-index: 10000;
                 text-decoration: none;
@@ -143,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         for (let i = 1; i <= count; i++) {
             const col = document.createElement("div");
-            col.className = "col-6 col-md-4 col-lg-3 d-flex justify-content-center fade-up";
+            col.className = "col-6 col-md-3 col-lg-2 d-flex justify-content-center fade-up";
             col.style.animationDelay = `${(i - 1) * 50}ms`;
 
             const imgContainer = document.createElement("div");
