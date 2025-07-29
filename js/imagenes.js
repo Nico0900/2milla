@@ -81,4 +81,17 @@ document.addEventListener("DOMContentLoaded", function () {
         col.appendChild(imgContainer);
         gallery.appendChild(col);
     }
+
+    // Blur y mostrar texto al pasar el mouse
+    img.addEventListener("mouseenter", function () {
+        img.style.filter = "blur(3px)";
+        img.style.transition = "filter 0.3s, transform 0.3s";
+        img.style.transform = "perspective(600px) rotateY(15deg) scale(1.05)";
+        overlayText.style.opacity = "1";
+    });
+    img.addEventListener("mouseleave", function () {
+        img.style.filter = "none";
+        img.style.transform = "none";
+        overlayText.style.opacity = "0";
+    });
 });
