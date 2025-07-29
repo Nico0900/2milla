@@ -16,7 +16,7 @@
       crossorigin="anonymous">
   </head>
   <body class="text-white" style="background-color: #192938;">
-    <nav>
+    <!-- <nav>
       <div class="container">
         <div class="d-flex justify-content-center align-items-center pt-4">
           <a class="navbar-brand" href="#">
@@ -25,46 +25,74 @@
           </a>
         </div>
       </div>
-    </nav>
+    </nav> -->
     <div>
-      <div class="container text-center ">
-        <h1 class="display-4"
-          style="font-family: 'Delius Swash Caps', cursive;">
-          Bienvenido a Tratados <span
-            style="font-family: 'Delius Unicase', cursive;">IUMP</span>
-        </h1>
-        <h5 class="lead" style="font-family: 'DynaPuff', cursive;">Explora
-          nuestros tratados y Obten el tuyo</h5>
-        <button class="btn btn-lg px-4 py-2 shadow-lg mt-3" type="button"
-          style="background: linear-gradient(145deg, #e8eff6 0%, #cfd8e3 100%);
-           color: #192938;
-           font-family: 'DynaPuff', cursive;
-           border-radius: 25px;
-           box-shadow: 0 8px 24px rgba(34, 48, 74, 0.45), 0 1.5px 0 #fff inset;
-           border: none;
-           transition: transform 0.2s, box-shadow 0.2s;
-           transform: perspective(400px) translateZ(10px);">
-          <span
-            style="font-size: 1em; text-shadow: 0 2px 6px #fff;">❤️‍🩹</span>
-          Iniciar Sesion
-        </button>
+      <!-- Contenedor principal -->
+      <div class="text-center"
+        style="position: relative; height: 100vh; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <!-- Imagen de fondo con desenfoque -->
         <div
-          class="d-flex justify-content-center align-items-end mt-2">
-          <img src="src/icons/arrow.png" alt="arrow GIF"
-            class="img-fluid mb-2 floating-arrow"
-            style="width: 80px; filter: brightness(0) invert(1);">
+          style="background-image: url('../src/images/Fondo.jpg'); background-size: cover; background-position: center; height: 100%; width: 100%; position: absolute; top: 0; left: 0; filter: blur(4px); z-index: 0;"></div>
+
+        <!-- Contenido principal -->
+        <div style="position: relative; z-index: 1;">
+          <img src="src/icons/Tratados.png" alt="Logo" height="150"
+            class="d-inline-block align-text-top">
+          <h1 class="display-4">
+            Bienvenido a Tratados <span
+              style="font-family: 'Delius Unicase', cursive;">IUMP</span>
+          </h1>
+          <h5 class="lead">
+            Explora nuestros tratados y Obtén el tuyo
+          </h5>
+          <a href="#material" class="btn btn-lg px-4 py-2 shadow-lg mt-3"
+            style="background: linear-gradient(145deg, #e8eff6 0%, #cfd8e3 100%);
+              color: #192938;
+              font-family: 'DynaPuff', cursive;
+              border-radius: 25px;
+              box-shadow: 0 8px 24px rgba(34, 48, 74, 0.45), 0 1.5px 0 #fff inset;
+              border: none;
+              transition: transform 0.2s, box-shadow 0.2s;
+              transform: perspective(400px) translateZ(10px);
+              text-decoration: none;">
+            <span
+              style="font-size: 1em; text-shadow: 0 2px 6px #fff;">❤️‍🩹</span>
+            ¡Comencemos!
+          </a>
+
+          <div class="d-flex justify-content-center align-items-end"
+            style="padding-top: 4rem;">
+            <img src="src/icons/arrow.png" alt="arrow GIF"
+              class="img-fluid mb-2 floating-arrow"
+              style="width: 80px; filter: brightness(0) invert(1);">
+          </div>
         </div>
       </div>
 
+      <!-- Título centrado y llamativo -->
+      <h1 id="material"
+        style="text-align: center; font-size: 4rem; font-weight: bold; color: #ffffff; padding-top: 3rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
+        Material de Evangelismo
+      </h1>
       <!-- Botones de navegación de tratados -->
-      <div class="container text-center">
-        <div class="d-flex justify-content-center gap-3 mb-4">
-          <button id="btn-jovenes" class="btn-tratado">
-            👦🏻 Jóvenes
-          </button>
-          <button id="btn-senoritas" class="btn-tratado">
-            👧🏻 Señoritas
-          </button>
+      <!-- Grupo de botones con estilo btn-tratado -->
+      <div class="container text-center" style="padding: 2rem;">
+        <div class="btn-group" role="group" aria-label="Grupo de categorías">
+          <input type="radio" class="btn-check" name="btnradio"
+            id="btn-tratados" autocomplete="off" checked>
+          <label class="btn-tratado mx-3" for="btn-tratados">📄 Tratados</label>
+
+          <input type="radio" class="btn-check" name="btnradio"
+            id="btn-separadores" autocomplete="off">
+          <label class="btn-tratado mx-3" for="btn-separadores">📑 Separadores
+            de
+            Biblia</label>
+
+          <input type="radio" class="btn-check" name="btnradio"
+            id="btn-stickers" autocomplete="off">
+          <label class="btn-tratado mx-3" for="btn-stickers">🖼️
+            Stickers</label>
+
         </div>
       </div>
 

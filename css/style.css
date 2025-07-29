@@ -1,7 +1,43 @@
 body {
-    background-color: #be2626;
+    background-color: #192938;
     /* Color de fondo */
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
+
+h1 {
+    font-family: 'Delius Swash Caps', cursive;
+    color: white;
+}
+
+h5 {
+    font-family: 'DynaPuff', cursive;
+    color: white;
+}
+
+.btn-custom {
+    background: linear-gradient(145deg, #e8eff6 0%, #cfd8e3 100%);
+    color: #192938;
+    font-family: 'DynaPuff', cursive;
+    border-radius: 25px;
+    box-shadow: 0 8px 24px rgba(34, 48, 74, 0.45), 0 1.5px 0 #fff inset;
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    transform: perspective(400px) translateZ(10px);
+}
+
+.btn-custom span {
+    font-size: 1em;
+    text-shadow: 0 2px 6px #fff;
+}
+
+.floating-arrow {
+    width: 80px;
+    filter: brightness(0) invert(1);
+}
+
+
 
 
 /* flecha en movimiento de tipo flotante */
@@ -65,7 +101,7 @@ body {
 
 /* barra lateral */
 .social-sidebar {
-    background-color: #263f54bd;
+    background-color: #6aa3c650;
     position: fixed;
     top: 50%;
     right: 30px;
