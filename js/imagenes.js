@@ -56,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 position: absolute;
                 top: 20px;
                 right: 30px;
+                size: 25px;
                 background: transparent;
                 border: none;
                 font-size: 30px;
@@ -67,10 +68,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 position: absolute;
                 top: 20px;
                 right: 60px;
-                size: 18px;
+                size: 25px;
                 color: white;
                 border-radius: 6px;
-                padding: 18px 10px;
+                padding: 17px 10px;
                 cursor: pointer;
                 z-index: 10000;
                 text-decoration: none;
