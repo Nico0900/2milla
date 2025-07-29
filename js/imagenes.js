@@ -5,6 +5,12 @@ document.addEventListener("DOMContentLoaded", function () {
     fontLink.rel = "stylesheet";
     document.head.appendChild(fontLink);
 
+    // Cargar Font Awesome para el icono de descarga
+    const faLink = document.createElement("link");
+    faLink.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css";
+    faLink.rel = "stylesheet";
+    document.head.appendChild(faLink);
+
     const gallery = document.getElementById("tratados-gallery");
 
     // Crear el modal para mostrar la imagen en grande
@@ -21,18 +27,18 @@ document.addEventListener("DOMContentLoaded", function () {
     modal.style.alignItems = "center";
     modal.style.zIndex = "9999";
     modal.style.cursor = "pointer";
-    modal.innerHTML = `<img id="modal-img" style="max-width:90vw;max-height:90vh;border-radius:10px;box-shadow:0 0 20px #000;" />`;
+    modal.innerHTML = `<img id="modal-img" style="max-height:90%; max-width:90%; border-radius:10px;" />`;
     document.body.appendChild(modal);
 
     modal.addEventListener("click", function () {
         modal.style.display = "none";
     });
 
-    for (let i = 1; i <= 8; i++) {
+    for (let i = 1; i <= 30; i++) {
         const col = document.createElement("div");
         col.className = "col-6 col-md-4 col-lg-3 d-flex justify-content-center";
 
-        // Contenedor para la imagen y el texto
+        // Contenedor para la imagen y el icono
         const imgContainer = document.createElement("div");
         imgContainer.style.position = "relative";
         imgContainer.style.display = "inline-block";
@@ -42,31 +48,29 @@ document.addEventListener("DOMContentLoaded", function () {
         img.className = "img-fluid rounded shadow tratado-img";
         img.alt = `Tratado ${i}`;
 
-        // Texto centrado
-        const overlayText = document.createElement("div");
-        overlayText.innerText = "Ver Tratado";
-        overlayText.style.position = "absolute";
-        overlayText.style.top = "50%";
-        overlayText.style.left = "50%";
-        overlayText.style.transform = "translate(-50%, -50%)";
-        overlayText.style.fontFamily = "'Chewy', cursive";
-        overlayText.style.fontSize = "2rem";
-        overlayText.style.color = "#fff";
-        overlayText.style.textShadow = "2px 2px 8px #000";
-        overlayText.style.pointerEvents = "none";
-        overlayText.style.userSelect = "none";
-        overlayText.style.opacity = "0"; // Oculto por defecto
-        overlayText.style.transition = "opacity 0.3s";
+        // Icono de descarga
+        const downloadIcon = document.createElement("a");
+        downloadIcon.href = img.src;
+        downloadIcon.download = `Tratado_${i}.jpg`;
+        downloadIcon.innerHTML = `<i class="fa-solid fa-download"></i>`;
+        downloadIcon.style.position = "absolute";
+        downloadIcon.style.top = "15px"; // Colocamos el icono en la parte superior
+        downloadIcon.style.right = "15px"; // Y en la parte derecha
+        downloadIcon.style.fontSize = "20px"; // Tamaño adecuado para que sea visible
+        downloadIcon.style.color = "#192938"; // Blanco para que se vea bien en cualquier imagen
+        downloadIcon.style.transition = "transform 0.2s, color 0.2s"; // Transición suave
+        downloadIcon.style.zIndex = "3"; // Aseguramos que siempre esté encima de la imagen
+        downloadIcon.style.textDecoration = "none"; // Quitamos el subrayado
+        downloadIcon.style.pointerEvents = "auto"; // Permitir la interacción con el icono
 
-        // Blur y mostrar texto al pasar el mouse
-        img.addEventListener("mouseenter", function () {
-            img.style.filter = "blur(3px)";
-            img.style.transition = "filter 0.3s";
-            overlayText.style.opacity = "1";
+        // Efecto visual cuando el cursor pasa sobre el icono
+        downloadIcon.addEventListener("mouseenter", function () {
+            downloadIcon.style.transform = "scale(1.2)"; // Ampliamos ligeramente el icono
         });
-        img.addEventListener("mouseleave", function () {
-            img.style.filter = "none";
-            overlayText.style.opacity = "0";
+
+        downloadIcon.addEventListener("mouseleave", function () {
+            downloadIcon.style.transform = "scale(1)"; // Volvemos al tamaño original
+            downloadIcon.style.color = "#192938"; // Restauramos el color original
         });
 
         // Mostrar imagen en grande al hacer clic
@@ -77,21 +81,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         imgContainer.appendChild(img);
-        imgContainer.appendChild(overlayText);
+        imgContainer.appendChild(downloadIcon);
         col.appendChild(imgContainer);
         gallery.appendChild(col);
     }
-
-    // Blur y mostrar texto al pasar el mouse
-    img.addEventListener("mouseenter", function () {
-        img.style.filter = "blur(3px)";
-        img.style.transition = "filter 0.3s, transform 0.3s";
-        img.style.transform = "perspective(600px) rotateY(15deg) scale(1.05)";
-        overlayText.style.opacity = "1";
-    });
-    img.addEventListener("mouseleave", function () {
-        img.style.filter = "none";
-        img.style.transform = "none";
-        overlayText.style.opacity = "0";
-    });
 });
