@@ -65,7 +65,7 @@ body {
 
 /* barra lateral */
 .social-sidebar {
-    background-color: #263f54;
+    background-color: #263f54bd;
     position: fixed;
     top: 50%;
     right: 30px;
