@@ -2,3 +2,21 @@ body {
     background-color: #be2626;
     /* Color de fondo */
 }
+
+
+/* flecha en movimiento de tipo flotante */
+.floating-arrow {
+    animation: floatArrow 1s infinite alternate;
+}
+
+@keyframes floatArrow {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+/* fin de flecha en movimiento de tipo flotante */
