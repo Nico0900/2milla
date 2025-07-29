@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             #download-modal-btn {
                 position: absolute;
-                top: 20px;
+                top: 19px;
                 right: 60px;
                 size: 25px;
                 color: white;
