@@ -1,10 +1,14 @@
+
 document.addEventListener("DOMContentLoaded", function () {
     const gallery = document.getElementById("tratados-gallery");
-    const btnJovenes = document.getElementById("btn-jovenes");
-    const btnSenoritas = document.getElementById("btn-senoritas");
-    const allButtons = [btnJovenes, btnSenoritas];
+    const btnTratados = document.getElementById("btn-tratados");
+    const btnSeparadores = document.getElementById("btn-separadores");
+    const btnStickers = document.getElementById("btn-stickers");
+
+    const allButtons = [btnTratados, btnSeparadores, btnStickers];
 
     const loadAssets = () => {
+
         const fontLink = document.createElement("link");
         fontLink.href = "https://fonts.googleapis.com/css?family=Chewy&display=swap";
         fontLink.rel = "stylesheet";
@@ -56,7 +60,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 position: absolute;
                 top: 20px;
                 right: 30px;
-                size: 25px;
                 background: transparent;
                 border: none;
                 font-size: 30px;
@@ -68,7 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 position: absolute;
                 top: 19px;
                 right: 60px;
-                size: 25px;
                 color: white;
                 border-radius: 6px;
                 padding: 17px 10px;
@@ -79,6 +81,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 align-items: center;
                 gap: 6px;
                 transition: background-color 0.3s;
+            }
+            .btn-check + label {
+                border-radius: 5% !important;
             }
         `;
         document.head.appendChild(style);
@@ -100,6 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
         modal.style.cursor = "pointer";
         modal.style.flexDirection = "column";
         modal.style.userSelect = "none";
+        modal.style.display = "none";
 
         modal.innerHTML = `
             <button id="close-modal-btn" aria-label="Cerrar modal">&times;</button>
@@ -113,18 +119,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const closeModal = () => {
             modal.style.display = "none";
-            document.body.style.overflow = ""; // Restablecer scroll
+            document.body.style.overflow = "";
         };
 
         modal.addEventListener("click", (e) => {
-            // Cierra modal si haces click fuera de la imagen o los botones (en el fondo)
             if (e.target === modal) {
                 closeModal();
             }
         });
 
-        const closeBtn = modal.querySelector("#close-modal-btn");
-        closeBtn.addEventListener("click", (e) => {
+        modal.querySelector("#close-modal-btn").addEventListener("click", (e) => {
             e.stopPropagation();
             closeModal();
         });
@@ -135,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
         activeBtn.classList.add("active");
     };
 
-    const loadImages = (folder, count) => {
+    const loadImages = (folder, count, extension = "jpg") => {
         gallery.innerHTML = "";
 
         for (let i = 1; i <= count; i++) {
@@ -148,21 +152,21 @@ document.addEventListener("DOMContentLoaded", function () {
             imgContainer.style.display = "inline-block";
 
             const img = document.createElement("img");
-            img.src = `src/images/tratados/${folder}/${i}.jpg`;
+            img.src = `src/images/${folder}/${i}.${extension}`;
             img.className = "img-fluid rounded shadow tratado-img";
-            img.alt = `Tratado ${i}`;
+            img.alt = `Image ${i}`;
             img.style.transition = "transform 0.2s";
 
             const downloadIcon = document.createElement("a");
             downloadIcon.href = img.src;
-            downloadIcon.download = `Tratado_${folder}_${i}.jpg`;
+            downloadIcon.download = `Image_${folder}_${i}.${extension}`;
             downloadIcon.innerHTML = `<i class="fa-solid fa-download"></i>`;
             Object.assign(downloadIcon.style, {
                 position: "absolute",
                 top: "15px",
                 right: "15px",
                 fontSize: "20px",
-                color: "#192938",
+                color: extension === "png" ? "#4786b0" : "#192938",
                 transition: "transform 0.2s, color 0.2s",
                 zIndex: "3",
                 textDecoration: "none",
@@ -175,7 +179,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             downloadIcon.addEventListener("mouseleave", () => {
                 downloadIcon.style.transform = "scale(1)";
-                downloadIcon.style.color = "#192938";
             });
 
             img.addEventListener("mouseenter", () => {
@@ -193,12 +196,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 const modal = document.getElementById("image-modal");
                 modal.style.display = "flex";
-                document.body.style.overflow = "hidden"; // Bloquea scroll del body
+                document.body.style.overflow = "hidden";
 
-                // Actualizar botón descarga del modal
                 const downloadModalBtn = document.getElementById("download-modal-btn");
                 downloadModalBtn.href = img.src;
-                downloadModalBtn.download = `Tratado_${folder}_${i}.jpg`;
+                downloadModalBtn.download = `Image_${folder}_${i}.${extension}`;
 
                 modalImg.style.animation = "none";
                 void modalImg.offsetWidth;
@@ -212,20 +214,25 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-    // Inicializar
+
     loadAssets();
     createModal();
-    loadImages("jovenes", 15); // Por defecto jóvenes
-    setActiveButton(btnJovenes);
+    loadImages("tratados", 15, "jpg"); // por defecto
+    setActiveButton(btnTratados);
 
-    // Botones de cambio de categoría
-    btnJovenes.addEventListener("click", () => {
-        loadImages("jovenes", 15);
-        setActiveButton(btnJovenes);
+    btnTratados.addEventListener("click", () => {
+        loadImages("tratados", 15, "jpg");
+        setActiveButton(btnTratados);
     });
 
-    btnSenoritas.addEventListener("click", () => {
-        loadImages("senoritas", 15);
-        setActiveButton(btnSenoritas);
+    btnSeparadores.addEventListener("click", () => {
+        loadImages("separadores", 15, "jpg");
+        setActiveButton(btnSeparadores);
     });
+
+    btnStickers.addEventListener("click", () => {
+        loadImages("stickers", 8, "png"); // <-- extensión corregida aquí
+        setActiveButton(btnStickers);
+    });
+
 });

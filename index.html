@@ -16,16 +16,6 @@
       crossorigin="anonymous">
   </head>
   <body class="text-white" style="background-color: #192938;">
-    <!-- <nav>
-      <div class="container">
-        <div class="d-flex justify-content-center align-items-center pt-4">
-          <a class="navbar-brand" href="#">
-            <img src="src/icons/Tratados.png" alt="Logo" height="150"
-              class="d-inline-block align-text-top">
-          </a>
-        </div>
-      </div>
-    </nav> -->
     <div>
       <!-- Contenedor principal -->
       <div class="text-center"
@@ -76,30 +66,36 @@
       </h1>
       <!-- Botones de navegación de tratados -->
       <!-- Grupo de botones con estilo btn-tratado -->
-      <div class="container text-center" style="padding: 2rem;">
-        <div class="btn-group" role="group" aria-label="Grupo de categorías">
-          <input type="radio" class="btn-check" name="btnradio"
-            id="btn-tratados" autocomplete="off" checked>
-          <label class="btn-tratado mx-3" for="btn-tratados">📄 Tratados</label>
+      <div class="container text-center py-4">
+        <div
+          class="d-flex flex-wrap justify-content-center gap-3 gap-md-4 responsive-btn-group">
+          <div class="btn-wrapper order-1 order-md-1">
+            <input type="radio" class="btn-check" name="btnradio"
+              id="btn-tratados" autocomplete="off" checked>
+            <label class="btn-tratado" for="btn-tratados" style="
+      border-radius: 30px 30px 30px 30px !important;">📄 Tratados</label>
+          </div>
 
-          <input type="radio" class="btn-check" name="btnradio"
-            id="btn-separadores" autocomplete="off">
-          <label class="btn-tratado mx-3" for="btn-separadores">📑 Separadores
-            de
-            Biblia</label>
+          <div class="btn-wrapper order-3 order-md-2">
+            <input type="radio" class="btn-check" name="btnradio"
+              id="btn-separadores" autocomplete="off">
+            <label class="btn-tratado" for="btn-separadores" style="
+      border-radius: 30px 30px 30px 30px !important;">📑 Separadores de
+              Biblia</label>
+          </div>
 
-          <input type="radio" class="btn-check" name="btnradio"
-            id="btn-stickers" autocomplete="off">
-          <label class="btn-tratado mx-3" for="btn-stickers">🖼️
-            Stickers</label>
-
+          <div class="btn-wrapper order-2 order-md-3">
+            <input type="radio" class="btn-check" name="btnradio"
+              id="btn-stickers" autocomplete="off">
+            <label class="btn-tratado" for="btn-stickers" style="
+      border-radius: 30px 30px 30px 30px !important;">🖼️ Stickers</label>
+          </div>
         </div>
       </div>
 
       <div class="container text-center">
-        <div id="tratados-gallery" class="row g-3 pb-3 justify-content-center">
-          <!-- Las imágenes se insertarán aquí con JS -->
-        </div>
+        <div id="tratados-gallery" class="row g-3 px-3"></div>
+        <!-- aqui se mostraran las imagenes seccionadas -->
       </div>
     </div>
 
