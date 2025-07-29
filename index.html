@@ -1,23 +1,69 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tratados IUMP</title>
-    <link rel="icon" href="images/icons/flyer.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/output.css">
-
+    <link rel="icon" href="src/icons/flyer.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous">
   </head>
-  <body>
-        <div class="flex items-center">
-            <img src="images/icons/flyer.png" />
-            <div>
-                <strong>Andrew Alfred</strong>
-                <span>Technical advisor</span>
-            </div>
+  <body class="text-white" style="background-color: #192938;">
+    <nav>
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center py-4">
+          <a class="navbar-brand" href="#">
+            <img src="src/icons/flyer.png" alt="Logo" width="30" height="30"
+              class="d-inline-block align-text-top">
+            Tratados IUMP
+          </a>
+          <button class="btn btn-outline-light" type="button">Login</button>
         </div>
+      </div>
+    </nav>
+    <div>
+      <div class="container text-center my-5">
+        <h1 class="display-4">Bienvenido a Tratados IUMP</h1>
+        <p class="lead">Explora nuestros tratados y documentos importantes.</p>
+        <a href="#" class="btn btn-primary btn-lg">Comenzar</a>
+        <div class="d-flex justify-content-center align-items-end mt-4">
+          <img src="src/gift/down.gif" alt="Finger GIF" class="img-fluid mb-2"
+            style="width: 90px;">
+        </div>
+      </div>
+      <div class="container my-5 text-center">
+        <div id="tratados-gallery" class="row g-3 justify-content-center">
+          <!-- Las imágenes se insertarán aquí con JS -->
+        </div>
+      </div>
+      <style>
+        .tratado-img:hover {
+          filter: blur(0.5px);
+          transition: filter 0.2s;
+        }
+      </style>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const gallery = document.getElementById("tratados-gallery");
+          for (let i = 1; i <= 33; i++) {
+        const col = document.createElement("div");
+        col.className = "col-6 col-md-4 col-lg-3 d-flex justify-content-center";
+        const img = document.createElement("img");
+        img.src = `src/images/tratados/${i}.jpg`;
+        img.className = "img-fluid rounded shadow tratado-img";
+        img.alt = `Tratado ${i}`;
+        col.appendChild(img);
+        gallery.appendChild(col);
+          }
+        });
+      </script>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"></script>
   </body>
 </html>
-
-
-
