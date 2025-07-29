@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 opacity: 0;
                 transform: scale(0.8);
                 animation: zoomIn 0.3s ease forwards;
+                border-radius: 10px;
             }
             @keyframes fadeIn {
                 from { background: rgba(0, 0, 0, 0); }
@@ -48,6 +49,37 @@ document.addEventListener("DOMContentLoaded", function () {
             .fade-up {
                 animation: fadeUp 0.5s ease forwards;
             }
+            #close-modal-btn {
+                position: absolute;
+                top: 20px;
+                right: 30px;
+                background: transparent;
+                border: none;
+                font-size: 30px;
+                color: white;
+                cursor: pointer;
+                z-index: 10000;
+            }
+            #download-modal-btn {
+                position: absolute;
+                bottom: 20px;
+                left: 30px;
+                font-size: 24px;
+                color: white;
+                background: rgba(0,0,0,0.4);
+                border-radius: 6px;
+                padding: 6px 10px;
+                cursor: pointer;
+                z-index: 10000;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                transition: background-color 0.3s;
+            }
+            #download-modal-btn:hover {
+                background: rgba(255,255,255,0.2);
+            }
         `;
         document.head.appendChild(style);
     };
@@ -66,24 +98,15 @@ document.addEventListener("DOMContentLoaded", function () {
         modal.style.alignItems = "center";
         modal.style.zIndex = "9999";
         modal.style.cursor = "pointer";
-        modal.style.flexDirection = "column"; // para posicionar el botón "X"
+        modal.style.flexDirection = "column";
+        modal.style.userSelect = "none";
 
         modal.innerHTML = `
-            <button id="close-modal-btn" 
-                style="
-                    position: absolute; 
-                    top: 20px; 
-                    right: 30px; 
-                    background: transparent; 
-                    border: none; 
-                    font-size: 30px; 
-                    color: white; 
-                    cursor: pointer;
-                    z-index: 10000;
-                ">
-                &times;
-            </button>
-            <img id="modal-img" style="max-height:90%; max-width:90%; border-radius:10px;" />
+            <button id="close-modal-btn" aria-label="Cerrar modal">&times;</button>
+            <img id="modal-img" alt="Imagen ampliada" />
+            <a id="download-modal-btn" href="#" download="" aria-label="Descargar imagen">
+                <i class="fa-solid fa-download"></i>
+            </a>
         `;
 
         document.body.appendChild(modal);
@@ -94,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         modal.addEventListener("click", (e) => {
-            // Cierra modal si haces click fuera de la imagen (en el fondo)
+            // Cierra modal si haces click fuera de la imagen o los botones (en el fondo)
             if (e.target === modal) {
                 closeModal();
             }
@@ -102,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const closeBtn = modal.querySelector("#close-modal-btn");
         closeBtn.addEventListener("click", (e) => {
-            e.stopPropagation(); // prevenir propagación para no disparar evento del modal
+            e.stopPropagation();
             closeModal();
         });
     };
@@ -166,9 +189,17 @@ document.addEventListener("DOMContentLoaded", function () {
             img.addEventListener("click", () => {
                 const modalImg = document.getElementById("modal-img");
                 modalImg.src = img.src;
+                modalImg.alt = img.alt;
+
                 const modal = document.getElementById("image-modal");
                 modal.style.display = "flex";
                 document.body.style.overflow = "hidden"; // Bloquea scroll del body
+
+                // Actualizar botón descarga del modal
+                const downloadModalBtn = document.getElementById("download-modal-btn");
+                downloadModalBtn.href = img.src;
+                downloadModalBtn.download = `Tratado_${folder}_${i}.jpg`;
+
                 modalImg.style.animation = "none";
                 void modalImg.offsetWidth;
                 modalImg.style.animation = "zoomIn 0.3s ease forwards";
