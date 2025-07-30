@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     const gallery = document.getElementById("tratados-gallery");
     const btnTratados = document.getElementById("btn-tratados");
@@ -8,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const allButtons = [btnTratados, btnSeparadores, btnStickers];
 
     const loadAssets = () => {
-
         const fontLink = document.createElement("link");
         fontLink.href = "https://fonts.googleapis.com/css?family=Chewy&display=swap";
         fontLink.rel = "stylesheet";
@@ -214,12 +212,25 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
+    // 🔁 NUEVA FUNCIÓN PARA PRECARGAR
+    const preloadImages = (folder, count, extension = "jpg") => {
+        for (let i = 1; i <= count; i++) {
+            const img = new Image();
+            img.src = `src/images/${folder}/${i}.${extension}`;
+        }
+    };
 
+    // CARGA INICIAL
     loadAssets();
     createModal();
-    loadImages("tratados", 15, "jpg"); // por defecto
+    loadImages("tratados", 15, "jpg"); // mostrar tratados al inicio
     setActiveButton(btnTratados);
 
+    // 🔁 PRECARGA DE OTRAS CARPETAS
+    preloadImages("separadores", 15, "jpg");
+    preloadImages("stickers", 8, "png");
+
+    // EVENTOS
     btnTratados.addEventListener("click", () => {
         loadImages("tratados", 15, "jpg");
         setActiveButton(btnTratados);
@@ -231,8 +242,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     btnStickers.addEventListener("click", () => {
-        loadImages("stickers", 8, "png"); // <-- extensión corregida aquí
+        loadImages("stickers", 8, "png");
         setActiveButton(btnStickers);
     });
-
 });
