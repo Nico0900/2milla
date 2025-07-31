@@ -8,7 +8,6 @@
 ### Archivos Principales
 - **index.html**: Archivo principal que contiene la estructura HTML de la página.
 - **css/style.css**: Archivo de estilos CSS que define la apariencia visual de la página.
-- **js/button.js**: Script JavaScript que maneja la funcionalidad de los botones.
 - **js/imagenes.js**: Script JavaScript que se encarga de insertar imágenes dinámicamente en la galería de tratados.
 
 ### Recursos Externos
