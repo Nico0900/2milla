@@ -11,10 +11,110 @@ body {
     height: 100vh;
     width: 100%;
     display: flex;
+    padding-top: 9%;
+    padding-right: 5%;
     flex-direction: column;
+    justify-content: right;
+    align-items: end;
+    overflow: hidden;
+}
+
+/* Barra de navegación fija centrada y del tamaño del contenido */
+.navbar {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border-radius: 25px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    z-index: 1000;
+    width: max-content;
+    /* Solo lo necesario para los links */
+}
+
+/* Enlaces del nav */
+.navbar a {
+    color: #4267b2;
+    text-decoration: none;
+    padding: 10px 15px;
+    min-width: 80px;
+    height: 30px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    color: white;
+    background-color: #4267b2;
+}
+
+/* Enlace activo */
+.nav-link.active {
+    background-color: #4267b2;
+    color: white !important;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+h1 {
+    font-family: 'Intro Scripts', cursive;
+    font-size: 4rem !important;
+    text-align: right !important;
+    color: #1443a1 !important;
+}
+
+h5 {
+    font-family: 'DynaPuff', cursive;
+    font-size: 2rem !important;
+    text-align: right !important;
+    color: #1443a1 !important;
+}
+
+
+/* Ajustes para pantallas pequeñas (modo teléfono) */
+@media (max-width: 576px) {
+
+    /* Centrar textos principales */
+    h1,
+    h5 {
+        text-align: center !important;
+    }
+
+    /* Centrar navbar y mantener tamaño */
+    .navbar {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 130px;
+        padding: 8px 16px;
+        flex-direction: column;
+        gap: 8px;
+        border-radius: 20px;
+    }
+
+    .navbar a {
+        min-width: 70px;
+        font-size: 0.9rem;
+        padding: 8px 12px;
+        height: auto;
+    }
+}
+
+
+
+.button-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
 }
 
 .background-image {
@@ -24,7 +124,8 @@ body {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    filter: blur(4px);
+    object-position: 30% 70%;
+    filter: blur(1px);
     z-index: 0;
 }
 
@@ -37,30 +138,7 @@ body {
     font-family: 'Delius Unicase', cursive;
 }
 
-.btn-comenzar {
-    background: linear-gradient(145deg, #e8eff6 0%, #cfd8e3 100%);
-    color: #192938;
-    font-family: 'DynaPuff', cursive;
-    border-radius: 25px;
-    box-shadow: 0 8px 24px rgba(34, 48, 74, 0.45), 0 1.5px 0 #fff inset;
-    border: none;
-    padding: 0.75rem 2rem;
-    font-size: 1.2rem;
-    text-decoration: none;
-    transition: transform 0.2s, box-shadow 0.2s;
-    display: inline-block;
-}
 
-
-h1 {
-    font-family: 'Delius Swash Caps', cursive;
-    color: white;
-}
-
-h5 {
-    font-family: 'DynaPuff', cursive;
-    color: white;
-}
 
 .btn-custom {
     background: linear-gradient(145deg, #e8eff6 0%, #cfd8e3 100%);
@@ -117,33 +195,33 @@ h5 {
     }
 }
 
+.filtro-columna {
+    max-width: 250px;
+    /* Ancho fijo si es una barra lateral */
+    padding: 1rem;
+    /* color claro Bootstrap */
+    border: solid white;
+    border-radius: 5px;
+}
+
 .btn-tratado {
-    background: linear-gradient(135deg, #00c6ff, #0072ff);
-    color: white;
-    font-family: 'DynaPuff', cursive;
-    font-size: 1.2em;
-    padding: 10px 30px;
-    border: none;
-    border-radius: 30px !important;
-    box-shadow: 0 6px 18px rgba(0, 114, 255, 0.35);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    min-width: 180px;
     display: inline-block;
-    white-space: nowrap;
-    text-align: center;
+    padding: 10px 20px;
+    background-color: #192938;
+    color: white;
+    font-weight: 500;
+    border: none;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
-.btn-tratado:hover {
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 10px 24px rgba(0, 114, 255, 0.5);
-}
-
-.btn-tratado.active,
+.btn-tratado:hover,
 .btn-check:checked+.btn-tratado {
-    background: linear-gradient(135deg, #ff6ec4, #7873f5);
-    box-shadow: 0 10px 24px rgba(120, 115, 245, 0.5);
+    background-color: #0b5ed7;
+    /* Hover/checked más oscuro */
+    color: white;
 }
+
 
 /* Responsive: 100% width buttons in phones */
 @media (max-width: 576px) {
@@ -166,20 +244,18 @@ h5 {
 
 
 
-
-
 /* barra lateral */
 .social-sidebar {
-    background-color: #6aa3c650;
+    background-color: #ffffff65;
     position: fixed;
-    top: 50%;
-    right: 30px;
+    bottom: 1%;
+    left: 70px;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 20px 15px;
-    border-radius: 30px 30px 30px 30px;
+    gap: 15px;
+    padding: 18px 8px;
+    border-radius: 23px 23px 23px 23px;
     z-index: 9999;
 }
 
@@ -201,12 +277,12 @@ h5 {
         right: auto;
         background-color: #263f54bd;
         top: auto;
-        bottom: 55px;
+        bottom: 100px;
         transform: translateX(-50%);
         display: flex;
         flex-direction: row;
         border-radius: 30px 30px 30px 30px;
-        gap: 12px;
+        gap: 8px;
         padding: 10px 15px;
         box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
     }

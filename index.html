@@ -18,78 +18,106 @@
   <body class="text-white" style="background-color: #192938;">
     <div>
       <!-- Contenedor principal -->
-      <div class="main-container text-center">
-        <!-- Imagen de fondo con desenfoque -->
-        <img src="src/images/Fondo.jpg" alt="Fondo desenfocado"
+      <div class="main-container">
+        <img src="src/images/Fondo2.jpg" alt="Fondo desenfocado"
           class="background-image">
-
-        <!-- Contenido principal -->
+        <!-- <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item mx-2">
+                  <a class="nav-link active" href="#">Dorcas</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link " href="#">Jovenes</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link d" aria-disabled="true">Niños</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav> -->
         <div class="main-content">
-          <img src="src/icons/Tratados.png" alt="Logo" height="150"
-            class="d-inline-block align-text-top">
           <h1 class="display-4">
-            Bienvenido a Tratados <span class="titulo-destacado">IUMP</span>
+            Caminando la segunda milla
           </h1>
-          <h5 class="lead">Explora nuestros tratados y Obtén el tuyo</h5>
-          <a href="#material" class="btn-comenzar">
-            <span>❤️‍🩹</span> ¡Comencemos!
-          </a>
-
-          <div class="d-flex justify-content-center align-items-end mt-4">
-            <img src="src/icons/arrow.png" alt="arrow GIF"
-              class="img-fluid mb-2 floating-arrow">
-          </div>
+          <h5 class="lead">Iglesia Unidad Metodista Pentecostal</h5>
+          <h5 class="lead">1° Viña del Mar</h5>
         </div>
-      </div>
-
-      <!-- Título centrado y llamativo -->
-      <h1 id="material"
-        style="text-align: center; font-size: 4rem; font-weight: bold; color: #ffffff; padding-top: 3rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
-        Material de Evangelismo
-      </h1>
-      <!-- Botones de navegación de tratados -->
-      <!-- Grupo de botones con estilo btn-tratado -->
-      <div class="container text-center py-4">
         <div
-          class="d-flex flex-wrap justify-content-center gap-3 gap-md-4 responsive-btn-group">
-          <div class="btn-wrapper order-1 order-md-1">
-            <input type="radio" class="btn-check" name="btnradio"
-              id="btn-tratados" autocomplete="off" checked>
-            <label class="btn-tratado" for="btn-tratados" style="
-      border-radius: 30px 30px 30px 30px !important;">Tratados</label>
-          </div>
-
-          <div class="btn-wrapper order-3 order-md-2">
-            <input type="radio" class="btn-check" name="btnradio"
-              id="btn-separadores" autocomplete="off">
-            <label class="btn-tratado" for="btn-separadores" style="
-      border-radius: 30px 30px 30px 30px !important;">Separadores de
-              Biblia</label>
-          </div>
-
-          <div class="btn-wrapper order-2 order-md-3">
-            <input type="radio" class="btn-check" name="btnradio"
-              id="btn-stickers" autocomplete="off">
-            <label class="btn-tratado" for="btn-stickers" style="
-      border-radius: 30px 30px 30px 30px !important;">Stickers</label>
+          class="button-container">
+          <div class="d-flex justify-content-center align-items-end mt-4">
+            <a href="#material">
+              <img src="src/icons/arrow.png" alt="arrow GIF"
+              class="img-fluid mb-2 floating-arrow">
+            </a>
           </div>
         </div>
-      </div>
+      </div> 
+    </div>
 
-      <div class="container text-center">
-        <div id="tratados-gallery" class="row g-3 px-3"></div>
-        <!-- aqui se mostraran las imagenes seccionadas -->
+      <h2 id="material"
+        style="text-align: center; font-size: 4rem; font-weight: bold; color: #ffffff; padding-top: 3rem; padding-bottom: 2rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
+        Material de Evangelismo
+      </h2>
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <div class="navbar" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item mx-2">
+                  <a class="nav-link active" href="#">Dorcas</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link " href="#">Jovenes</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="#">Niños</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      <div class="container pt-5">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="container py-4">
+              <div class="filtro-columna d-flex flex-column align-items-start gap-3">
+                <div class="btn-wrapper">
+                  <input type="radio" class="btn-check" name="btnradio" id="btn-tratados" autocomplete="off" checked>
+                  <label class="btn-tratado" for="btn-tratados"
+                    style="border-radius: 30px 30px 30px 30px !important;">Tratados</label>
+                </div>
+                <div class="btn-wrapper">
+                  <input type="radio" class="btn-check" name="btnradio" id="btn-separadores" autocomplete="off">
+                  <label class="btn-tratado" for="btn-separadores"
+                    style="border-radius: 30px 30px 30px 30px !important;">Separadores de Biblia</label>
+                </div>
+                <div class="btn-wrapper">
+                  <input type="radio" class="btn-check" name="btnradio" id="btn-stickers" autocomplete="off">
+                  <label class="btn-tratado" for="btn-stickers"
+                    style="border-radius: 30px 30px 30px 30px !important;">Stickers</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-9">
+              <div class="container text-center">
+                <div id="tratados-gallery" class="row g-3 px-3"></div>
+              </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Barra lateral fija con íconos sociales -->
     <div class="social-sidebar">
       <a href="https://www.facebook.com" target="_blank"
-        class="social-icon facebook" title="Facebook">
+        class="social-icon facebook " title="Facebook">
         <img src="src/icons/facebook.png" alt="Facebook">
       </a>
       <a href="https://www.instagram.com" target="_blank"
-        class="social-icon instagram" title="Instagram">
+        class="social-icon instagram " title="Instagram">
         <img src="src/icons/instagram.png" alt="Instagram">
       </a>
       <a href="mailto:tucorreo@gmail.com" class="social-icon gmail"
@@ -111,6 +139,12 @@
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous">
     </script>
+    <script>
+      function toggleNavbar() {
+        document.querySelector('.navbar-links').classList.toggle('show');
+      }
+    </script>
+
     <script src="js/button.js"></script>
     <script src="js/imagenes.js"></script>
   </body>
