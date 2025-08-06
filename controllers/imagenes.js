@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const gallery = document.getElementById("tratados-gallery");
+    const gallery = document.getElementById("galleria");
     const btnTratados = document.getElementById("btn-tratados");
     const btnSeparadores = document.getElementById("btn-separadores");
     const btnStickers = document.getElementById("btn-stickers");
@@ -140,6 +140,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const loadImages = (folder, count, extension = "jpg") => {
         gallery.innerHTML = "";
+
+        if (count === 0) {
+            const message = document.createElement("div");
+            message.className = "text-center w-100 py-5";
+            message.style.color = "#fff"; // Ajusta si usas fondo oscuro
+            message.style.fontSize = "1.5rem";
+            message.style.fontFamily = "'Chewy', cursive";
+
+            const nombres = {
+                tratados: "tratados",
+                separadores: "separadores",
+                stickers: "stickers",
+                fondos: "fondos"
+            };
+
+            message.textContent = `No hay ${nombres[folder] || "elementos"} que mostrar`;
+            gallery.appendChild(message);
+            return;
+        }
 
         for (let i = 1; i <= count; i++) {
             const col = document.createElement("div");
