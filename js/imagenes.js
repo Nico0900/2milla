@@ -3,8 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnTratados = document.getElementById("btn-tratados");
     const btnSeparadores = document.getElementById("btn-separadores");
     const btnStickers = document.getElementById("btn-stickers");
+    const btnFondos = document.getElementById("btn-fondos")
 
-    const allButtons = [btnTratados, btnSeparadores, btnStickers];
+    const allButtons = [btnTratados, btnSeparadores, btnStickers, btnFondos];
 
     const loadAssets = () => {
         const fontLink = document.createElement("link");
@@ -229,6 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // 🔁 PRECARGA DE OTRAS CARPETAS
     preloadImages("separadores", 15, "jpg");
     preloadImages("stickers", 8, "png");
+    preloadImages("fondos", 0, "jpg");
 
     // EVENTOS
     btnTratados.addEventListener("click", () => {
@@ -245,4 +247,9 @@ document.addEventListener("DOMContentLoaded", function () {
         loadImages("stickers", 8, "png");
         setActiveButton(btnStickers);
     });
+
+    btnFondos.addEventListener("click", () => {
+        loadImages("fondos", 0, "jpg");
+        setActiveButton(btnFondos)
+    })
 });

@@ -11,55 +11,12 @@ body {
     height: 100vh;
     width: 100%;
     display: flex;
-    padding-top: 9%;
+    padding-top: 10%;
     padding-right: 5%;
     flex-direction: column;
     justify-content: right;
     align-items: end;
     overflow: hidden;
-}
-
-/* Barra de navegación fija centrada y del tamaño del contenido */
-.navbar {
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: white;
-    border-radius: 25px;
-    padding: 10px 20px;
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    z-index: 1000;
-    width: max-content;
-    /* Solo lo necesario para los links */
-}
-
-/* Enlaces del nav */
-.navbar a {
-    color: #4267b2;
-    text-decoration: none;
-    padding: 10px 15px;
-    min-width: 80px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    transition: all 0.3s ease-in-out;
-}
-
-.navbar a:hover {
-    color: white;
-    background-color: #4267b2;
-}
-
-/* Enlace activo */
-.nav-link.active {
-    background-color: #4267b2;
-    color: white !important;
-    border-radius: 20px;
-    font-weight: bold;
 }
 
 h1 {
@@ -85,25 +42,89 @@ h5 {
     h5 {
         text-align: center !important;
     }
-
-    /* Centrar navbar y mantener tamaño */
-    .navbar {
-        left: 50%;
-        transform: translateX(-50%);
-        width: 130px;
-        padding: 8px 16px;
-        flex-direction: column;
-        gap: 8px;
-        border-radius: 20px;
-    }
-
-    .navbar a {
-        min-width: 70px;
-        font-size: 0.9rem;
-        padding: 8px 12px;
-        height: auto;
-    }
 }
+
+
+h4 {
+  font-size: 1.3rem;
+  color: #1f2d3d;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  position: relative;
+  padding-left: 1rem;
+}
+
+h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 80%;
+  background: linear-gradient(180deg, #007bff, #00c6ff);
+  border-radius: 4px;
+}
+
+.form-check {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Quitar fondo hover */
+.form-check:hover {
+  background-color: transparent;
+}
+
+.form-check-label {
+  position: relative;
+  font-size: 1rem;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+/* Línea decorativa debajo del label al hacer hover */
+.form-check-label::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #007bff, #00b4d8);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.form-check:hover .form-check-label::after {
+  width: 100%;
+}
+
+.form-check-input[type="radio"] {
+  accent-color: #00b4d8;
+  cursor: pointer;
+  width: 1.1rem;
+  height: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.form-check-input[type="radio"]:hover {
+  transform: scale(1.2);
+}
+
+.form-check-input[type="radio"]:checked + .form-check-label {
+  color: #0077b6;
+  font-weight: 600;
+}
+
 
 
 
@@ -197,20 +218,14 @@ h5 {
 
 .filtro-columna {
     max-width: 250px;
-    /* Ancho fijo si es una barra lateral */
-    padding: 1rem;
-    /* color claro Bootstrap */
-    border: solid white;
-    border-radius: 5px;
 }
 
 .btn-tratado {
-    display: inline-block;
-    padding: 10px 20px;
+    display: block;
+    padding: 5px 10px;
     background-color: #192938;
     color: white;
-    font-weight: 500;
-    border: none;
+    font-weight: 400;
     transition: background-color 0.3s ease;
     cursor: pointer;
 }
@@ -273,9 +288,9 @@ h5 {
 @media (max-width: 768px) {
     .social-sidebar {
         position: fixed;
-        left: 50%;
+        left: 47.5%;
         right: auto;
-        background-color: #263f54bd;
+        background-color: #ffffff65;
         top: auto;
         bottom: 100px;
         transform: translateX(-50%);
