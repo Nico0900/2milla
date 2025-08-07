@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio de sesion</title>
+    <link rel="stylesheet" href="../css/login.css" />
+</head>
+
+<body>
+    <section class="wrapper">
+        <div class="form signup">
+            <header>Registrarse</header>
+            <form action="#">
+                <input type="text" placeholder="Nombre y Apellidos" required />
+                <input type="text" placeholder="Correo electronico" required />
+                <input type="password" placeholder="Contraseña" required />
+                <div class="checkbox">
+                    <input type="checkbox" id="signupCheck" />
+                    <label for="signupCheck">Acepto terminos y condiciones</label>
+                </div>
+                <input type="submit" value="Registrarse" />
+            </form>
+        </div>
+        <div class="form login">
+            <header>Login</header>
+            <form action="#">
+                <input type="text" placeholder="Correo electronico" required />
+                <input type="password" placeholder="Contraseña" required />
+                <a href="#">Olvidaste tu contraseña?</a>
+                <input type="submit" value="Iniciar sesion" />
+            </form>
+        </div>
+        <script>
+            const wrapper = document.querySelector(".wrapper"),
+                signupHeader = document.querySelector(".signup header"),
+                loginHeader = document.querySelector(".login header");
+            loginHeader.addEventListener("click", () => {
+                wrapper.classList.add("active");
+            });
+            signupHeader.addEventListener("click", () => {
+                wrapper.classList.remove("active");
+            });
+        </script>
+    </section>
+</body>
+
+</html>

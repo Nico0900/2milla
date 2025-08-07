@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/@codingnepal -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style-user.css" />
+    <!-- Linking Google Fonts for Icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+    <!-- Mobile Sidebar Menu Button -->
+    <button class="sidebar-menu-button">
+        <span class="material-symbols-rounded">menu</span>
+    </button>
+    <aside class="sidebar">
+        <!-- Sidebar Header -->
+        <header class="sidebar-header">
+            <a href="#" class="header-logo">
+                <img src="../src/icons/logo_P.png" alt="CodingNepal" />
+            </a>
+            <button class="sidebar-toggler">
+                <span class="material-symbols-rounded">chevron_left</span>
+            </button>
+        </header>
+        <nav class="sidebar-nav">
+            <!-- Primary Top Nav -->
+            <ul class="nav-list primary-nav">
+                <!-- Pantalla Principal -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="material-symbols-rounded">dashboard</span>
+                        <span class="nav-label">Dashboard</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link dropdown-title">Dashboard</a></li>
+                    </ul>
+                </li>
+                <!-- Material de Evangelismo-->
+                <li class="nav-item dropdown-container">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        <span class="material-symbols-rounded">Stack</span>
+                        <span class="nav-label">Material de E.</span>
+                        <span class="dropdown-icon material-symbols-rounded">keyboard_arrow_down</span>
+                    </a>
+                    <!-- Dropdown Menu -->
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link dropdown-title"
+                                style="background-color: aliceblue; color: #151A2D;">Material de Evangelismo</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link dropdown-link">Tratados</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link dropdown-link">Separadores de biblia</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link dropdown-link">Fondos de pantalla</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link dropdown-link">Stickers</a></li>
+                    </ul>
+                </li>
+                <!-- Notificaciones -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="material-symbols-rounded">notifications</span>
+                        <span class="nav-label">Notifications</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link dropdown-title">Notifications</a></li>
+                    </ul>
+                </li>
+                <!-- Recursos -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="material-symbols-rounded">Stacks</span>
+                        <span class="nav-label">Recursos</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link dropdown-title">Resources</a></li>
+                    </ul>
+                </li>
+                <!-- Foro / dudas / consultas / aportes -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        <span class="material-symbols-rounded">Chat</span>
+                        <span class="nav-label">Foro</span>
+                    </a>
+                </li>
+                <!-- configuraciones -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="material-symbols-rounded">settings</span>
+                        <span class="nav-label">configuraciones</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link dropdown-title">Settings</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Secondary Bottom Nav -->
+            <ul class="nav-list secondary-nav">
+                <!-- Perfil -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="material-symbols-rounded">person</span>
+                        <span class="nav-label">Pefil</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link dropdown-title">Support</a></li>
+                    </ul>
+                </li>
+                <!-- cerrar sesion -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="material-symbols-rounded">logout</span>
+                        <span class="nav-label">Cerrar Sesión</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link dropdown-title">Sign Out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <div class="main-content">
+        <h1>Sector donde se muestran los detalles</h1>
+    </div>
+
+
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="../controllers/theme.js"></script>
+</body>
+
+</html>
