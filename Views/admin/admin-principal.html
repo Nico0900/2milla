@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/@codingnepal -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/admin/style-user.css" />
+    <!-- Linking Google Fonts for Icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+    <!-- Mobile Sidebar Menu Button -->
+    <button class="sidebar-menu-button">
+        <span class="material-symbols-rounded">menu</span>
+    </button>
+    <aside class="sidebar">
+        <!-- Sidebar Header -->
+        <header class="sidebar-header">
+            <a href="#" class="header-logo">
+                <img src="../../src/icons/Tratados (1).png" alt="Evangelismo" />
+            </a>
+            <button class="sidebar-toggler">
+                <span class="material-symbols-rounded">chevron_left</span>
+            </button>
+        </header>
+        <nav class="sidebar-nav">
+            <!-- Primary Top Nav -->
+            <ul class="nav-list primary-nav">
+                <!-- Pantalla Principal -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link" onclick="mostrarPantalla('Dashboard')">
+                        <span class="material-symbols-rounded">dashboard</span>
+                        <span class="nav-label">Dashboard</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link dropdown-title">Dashboard</a></li>
+                    </ul>
+                </li>
+                <!-- Material de Evangelismo -->
+                <li class="nav-item dropdown-container">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        <span class="material-symbols-rounded">Stack</span>
+                        <span class="nav-label">Material de E.</span>
+                        <span class="dropdown-icon material-symbols-rounded">keyboard_arrow_down</span>
+                    </a>
+                    <!-- Dropdown Menu -->
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link dropdown-title" style="background-color: aliceblue; color: #151A2D;">Material de Evangelismo</a></li>
+                        <li class="nav-item"><a href="#" onclick="mostrarPantalla('Tratados')" class="nav-link dropdown-link">Tratados</a></li>
+                        <li class="nav-item"><a href="#" onclick="mostrarPantalla('Separadores')" class="nav-link dropdown-link">Separadores de biblia</a></li>
+                        <li class="nav-item"><a href="#" onclick="mostrarPantalla('Fondos')" class="nav-link dropdown-link">Fondos de pantalla</a></li>
+                        <li class="nav-item"><a href="#" onclick="mostrarPantalla('Stickers')" class="nav-link dropdown-link">Stickers</a></li>
+                    </ul>
+                </li>
+                <!-- Notificaciones -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link" onclick="mostrarPantalla('Notificaciones')">
+                        <span class="material-symbols-rounded">notifications</span>
+                        <span class="nav-label">Notificaciones</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link dropdown-title">Notificaciones</a></li>
+                    </ul>
+                </li>
+                <!-- Recursos -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link" onclick="mostrarPantalla('Recursos')">
+                        <span class="material-symbols-rounded">Stacks</span>
+                        <span class="nav-label">Recursos</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link dropdown-title">Recursos</a></li>
+                    </ul>
+                </li>
+                <!-- Foro / dudas / consultas / aportes -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link dropdown-toggle" onclick="mostrarPantalla('Foro')">
+                        <span class="material-symbols-rounded">Chat</span>
+                        <span class="nav-label">Foro</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link dropdown-title">Foro</a></li>
+                    </ul>
+                </li>
+                <!-- configuraciones -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link" onclick="mostrarPantalla('Configuracion')">
+                        <span class="material-symbols-rounded">settings</span>
+                        <span class="nav-label">configuraciones</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link dropdown-title">configuraciones</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Secondary Bottom Nav -->
+            <ul class="nav-list secondary-nav">
+                <!-- Perfil -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link" onclick="mostrarPantalla('Perfil')">
+                        <span class="material-symbols-rounded">person</span>
+                        <span class="nav-label">Pefil</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link dropdown-title">Perfil</a></li>
+                    </ul>
+                </li>
+                <!-- cerrar sesion -->
+                <li class="nav-item">
+                    <a href="../../index.html" class="nav-link">
+                        <span class="material-symbols-rounded">logout</span>
+                        <span class="nav-label">Cerrar Sesión</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link dropdown-title">Sign Out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- pantallas independientes -->
+    <main class="main-content pantallas">
+        <section id="Dashboard" class="pantalla active">
+            <iframe src="dashboard.html"></iframe>
+        </section>
+
+        <section id="Tratados" class="pantalla">
+            <h1>Material de evangelismo / Tratados</h1>
+        </section>
+
+        <section id="Separadores" class="pantalla">
+            <h1>Material de evangelismo / Separadores</h1>
+        </section>
+
+        <section id="Stickers" class="pantalla">
+            <h1>Material de evangelismo / Stickers</h1>
+        </section>
+
+        <section id="Fondos" class="pantalla">
+            <h1>Material de evangelismo / Fondos de pantalla</h1>
+        </section>
+
+        <section id="Notificaciones" class="pantalla"> 
+            <h1>Notificaciones</h1>
+        </section>
+
+        <section id="Recursos" class="pantalla"> 
+            <h1>Recursos</h1>
+        </section>
+
+        <section id="Foro" class="pantalla"> 
+            <h1>Foro</h1>
+        </section>
+
+        <section id="Configuracion" class="pantalla"> 
+            <h1>Configuraciones</h1>
+        </section>
+
+        <section id="Perfil" class="pantalla">
+            <h1>Perfil</h1>
+        </section>
+    </main>
+
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="../../controllers/admin/theme.js"></script>
+    <script src="../../controllers/admin/vista-activa.js"></script>
+</body>
+
+</html>
