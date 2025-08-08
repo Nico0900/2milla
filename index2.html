@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <title>Navbar con hover</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            display: inline-block;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            white-space: nowrap;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: sans-serif;
+            background: url('src/images/Fondo2.jpg') no-repeat center center/cover;
+            height: 100vh;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 25px 150px;
+            background: rgba(255, 255, 255, 0);
+            color: white;
+            position: relative;
+        }
+
+        .logo {
+            font-family: 'Poppins', cursive;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+        }
+
+        .nav-links a,
+        .nav-links span {
+            color: white;
+            text-decoration: none;
+            padding: 6px 10px;
+            border-radius: 20px;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover,
+        .nav-links span:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle {
+            font-size: 14px;
+            margin-left: 6px;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown:hover .dropdown-toggle {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Íconos: solo muestra uno a la vez */
+        .arrow-up {
+            display: none;
+        }
+
+        .arrow-down {
+            display: inline;
+        }
+
+        /* Al hacer hover, invierte la visibilidad */
+        .dropdown:hover .arrow-up {
+            display: inline;
+        }
+
+        .dropdown:hover .arrow-down {
+            display: none;
+        }
+
+        /* Opcional: ajustar tamaño y posición */
+        .material-symbols-outlined {
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 45px;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 10px;
+            display: none;
+            flex-direction: column;
+            min-width: 280px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: flex;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 8px;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .join-btn {
+            background: white;
+            color: black;
+            padding: 8px 16px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .join-btn:hover {
+            background: #eee;
+        }
+
+        .icon-btn {
+            border: 1px solid white;
+            border-radius: 50%;
+            padding: 5px 10px;
+            font-weight: bold;
+        }
+
+        .dropdown-explorar .dropdown-content {
+            left: 0;
+            right: auto;
+        }
+
+        .dropdown-mas .dropdown-content {
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">Evangelismo</div>
+
+        <div class="nav-links">
+            <!-- Dropdown Explorar -->
+            <!-- HTML -->
+            <div class="dropdown dropdown-explorar">
+                <div class="dropdown-toggle" id="dropdownToggle">
+                    <span>Explorar</span>
+                    <i class="fa-solid fa-chevron-down" id="dropdownIcon"></i>
+                </div>
+
+                <div class="dropdown-content">
+                    <a href="#"><i class="fa-solid fa-house"></i> Material de Evangelismo</a>
+                    <a href="#"><i class="fa-solid fa-film"></i> Talleres</a>
+                    <a href="#"><i class="fa-solid fa-heart"></i> Plan de salvación</a>
+                    <a href="#"><i class="fa-solid fa-circle-exclamation"></i> Preguntas frecuentes</a>
+                </div>
+            </div>
+
+
+            <!-- Dropdown ... -->
+            <div class="dropdown dropdown-mas">
+                <div class="dropdown-toggle">
+                    <span class="icon-btn">...</span>
+                </div>
+
+                <div class="dropdown-content">
+                    <a href="#">🔒 Configuración</a>
+                    <a href="#">❓ Ayuda</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        const dropdown = document.querySelector('.dropdown-explorar');
+        const icon = document.getElementById('dropdownIcon');
+
+        dropdown.addEventListener('mouseenter', () => {
+            icon.classList.remove('fa-chevron-down');
+            icon.classList.add('fa-chevron-up');
+            icon.style.transform = 'rotate(180deg)';
+        });
+
+        dropdown.addEventListener('mouseleave', () => {
+            icon.classList.remove('fa-chevron-up');
+            icon.classList.add('fa-chevron-down');
+            icon.style.transform = 'rotate(0deg)';
+        });
+    </script>
+
+</body>
+
+</html>
