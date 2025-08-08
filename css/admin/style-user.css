@@ -182,13 +182,6 @@ iframe {
     transition: opacity 0.3s 0s ease;
 }
 
-.sidebar-nav .secondary-nav {
-    position: absolute;
-    bottom: 35px;
-    width: 100%;
-    background: #151A2D;
-}
-
 .sidebar-nav .nav-item {
     position: relative;
 }

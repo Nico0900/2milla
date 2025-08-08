@@ -100,17 +100,4 @@
   .nav-links {
     display: none;
   }
-
-  h2 {
-    font-family: 'DynaPuff', cursive;
-    font-size: 4rem !important;
-    text-align: center !important;
-    color: #ffffff !important;
-    font-weight: bold;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  }
-
-
 }
