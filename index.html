@@ -7,6 +7,7 @@
   <title>Tratados IUMP</title>
   <link rel="icon" href="src/icons/Tratados (1).png" type="image/x-icon" />
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/nav.css">
   <link
     href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Delius+Unicase&family=DynaPuff&display=swap"
     rel="stylesheet">
@@ -34,35 +35,46 @@
     </div>
   </div>
 
+  <div class="nav" id="Menu">
+    <ul class="nav-links">
+      <li><a href="#material">Galeria</a></li>
+      <li class="#"><a href="#">Talleres</a></li>
+      <!-- <li class="#"><a href="#">Inventario</a></li> -->
+      <li class="#"><a href="#">Plan de Salvación</a></li>
+      <li class="#"><a href="#">Preguntas</a></li>
+    </ul>
+  </div>
+
+  <!-- Material de evangelismo -->
   <h2 id="material">
     Material de Evangelismo
   </h2>
-  <div class="container-lg">
+  <div class="container">
     <div class="row">
-      <div class="col-md-3 pb-5">
+      <div class="col-md-3">
         <div class="container">
-          <!-- <div class="save-filters-wrapper">
-            <button class="btn-save-filters" id="toggleFiltrosBtn">
+          <div class="save-filters-wrapper">
+            <button class="btn-save-filters" id="toggleFiltrosBtn" aria-expanded="false" aria-controls="filtrosContent">
               Filtros ▾
             </button>
-          </div> -->
-          <!-- Contenedor ocultable -->
+          </div>
+
           <div class="filtro-columna d-flex flex-column align-items-start gap-3" id="filtrosContent">
             <h4>Filtrar por categoría</h4>
             <div style="padding-left: 20px;">
               <div class="form-check">
-                <input class="form-check-input category-radio" type="radio" name="category" value="dorcas"
-                  id="dorcasRadio">
+                <input class="form-check-input category-group" type="radio" name="category" value="dorcas"
+                  id="dorcasRadio" />
                 <label class="form-check-label" for="dorcasRadio">Dorcas</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input category-radio" type="radio" name="category" value="jovenes"
-                  id="jovenesRadio">
+                <input class="form-check-input category-group" type="radio" name="category" value="jovenes"
+                  id="jovenesRadio" />
                 <label class="form-check-label" for="jovenesRadio">Jóvenes</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input category-radio" type="radio" name="category" value="ninos"
-                  id="ninosRadio">
+                <input class="form-check-input category-group" type="radio" name="category" value="ninos"
+                  id="ninosRadio" />
                 <label class="form-check-label" for="ninosRadio">Niños</label>
               </div>
             </div>
@@ -72,76 +84,76 @@
             <h4>Tipo de material</h4>
             <div style="padding-left: 20px;">
               <div class="form-check">
-                <input class="form-check-input category-radio" type="radio" name="categoria2" value="Tratados"
-                  id="btn-tratados" checked>
+                <input class="form-check-input type-group" type="radio" name="categoria2" value="Tratados"
+                  id="btn-tratados" checked />
                 <label class="form-check-label" for="btn-tratados">Tratados</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input category-radio" type="radio" name="categoria2" value="Separadores"
-                  id="btn-separadores">
+                <input class="form-check-input type-group" type="radio" name="categoria2" value="Separadores"
+                  id="btn-separadores" />
                 <label class="form-check-label" for="btn-separadores">Separadores de Biblia</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input category-radio" type="radio" name="categoria2" value="Stickers"
-                  id="btn-stickers">
+                <input class="form-check-input type-group" type="radio" name="categoria2" value="Stickers"
+                  id="btn-stickers" />
                 <label class="form-check-label" for="btn-stickers">Stickers</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input category-radio" type="radio" name="categoria2" value="Fondos"
-                  id="btn-fondos">
+                <input class="form-check-input type-group" type="radio" name="categoria2" value="Fondos"
+                  id="btn-fondos" />
                 <label class="form-check-label" for="btn-fondos">Fondos de pantalla</label>
               </div>
             </div>
           </div>
         </div>
       </div>
-
       <div class="col-md-9">
-        <div style="padding-left: 40px; padding: 20px;">
-          <h4>Galeria</h4>
-        </div>
         <div class="container text-center">
           <div id="galleria" class="row g-3 px-3"></div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Barra lateral fija con íconos sociales -->
-  <div class="social-sidebar">
-    <a href="Views/login.html" class="social-icon person" title="User">
-      <img src="src/icons/user.webp" alt="Gmail">
-    </a>
-    <a href="https://www.facebook.com" target="_blank" class="social-icon facebook " title="Facebook">
-      <img src="src/icons/facebook.png" alt="Facebook">
-    </a>
-    <a href="https://www.instagram.com" target="_blank" class="social-icon instagram " title="Instagram">
-      <img src="src/icons/instagram.png" alt="Instagram">
-    </a>
-    <a href="mailto:tucorreo@gmail.com" class="social-icon gmail" title="Gmail">
-      <img src="src/icons/gmail.png" alt="Gmail">
-    </a>
-  </div>
+    <!-- Material de evangelismo -->
 
-  <footer class="footer text-white py-4 mt-4">
-    <div class="container text-center">
-      <div class="footer-text small">
-        © 2025 IUMP. Todos los derechos reservados.
-      </div>
+    <!-- Barra lateral fija con íconos sociales -->
+    <div class="social-sidebar">
+      <a href="Views/login.html" class="social-icon person" title="User">
+        <img src="src/icons/user.webp" alt="Gmail">
+      </a>
+      <a href="https://www.facebook.com" target="_blank" class="social-icon facebook " title="Facebook">
+        <img src="src/icons/facebook.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com" target="_blank" class="social-icon instagram " title="Instagram">
+        <img src="src/icons/instagram.png" alt="Instagram">
+      </a>
+      <a href="mailto:tucorreo@gmail.com" class="social-icon gmail" title="Gmail">
+        <img src="src/icons/gmail.png" alt="Gmail">
+      </a>
     </div>
-  </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous">
+    <footer class="footer text-white py-4 mt-4">
+      <div class="container text-center">
+        <div class="footer-text small">
+          © 2025 IUMP. Todos los derechos reservados.
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous">
+      </script>
+    <script>
+      function toggleNavbar() {
+        document.querySelector('.navbar-links').classList.toggle('show');
+      }
     </script>
-  <script>
-    function toggleNavbar() {
-      document.querySelector('.navbar-links').classList.toggle('show');
-    }
-  </script>
 
-  <script src="controllers/imagenes.js"></script>
-  <script src="controllers/filtros.js"></script>
+    <script src="controllers/imagenes.js"></script>
+    <script src="controllers/filtros.js"></script>
 </body>
 
 </html>
+
+
+

@@ -32,7 +32,7 @@ h2 {
     text-align: center !important;
     color: #ffffff !important;
     font-weight: bold;
-    padding-top: 3rem;
+    padding-top: 8rem;
     padding-bottom: 2rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -241,9 +241,26 @@ h4::before {
         background-color: #294055;
         transform: translateY(-2px);
     }
-
-
 }
+
+/* Transición suave para el contenedor de filtros */
+#filtrosContent {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    margin-top: 1rem;
+    width: max-content;
+}
+
+#filtrosContent.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
 
 .button-container {
     position: relative;
@@ -406,10 +423,10 @@ h4::before {
     .social-sidebar {
         background-color: #ffffff65;
         position: fixed;
-        right: 30px;
+        right: 90px;
         /* Cambiado de left a right */
         left: auto;
-        transform: translateY(-40%);
+        transform: translateY(-80%);
         display: flex;
         flex-direction: column;
         gap: 15px;
