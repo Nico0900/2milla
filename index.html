@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles/style.css">
     <link rel="icon" href="src/icons/icon-logo3.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/Canva.css">
-    <link rel="stylesheet" href="css/galeria.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/styles/galeria.css">
+    <link rel="stylesheet" href="css/styles/footer.css">
+    <link rel="stylesheet" href="css/styles/forms.css">
+    <link rel="stylesheet" href="css/styles/button.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <link
@@ -17,7 +18,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
 </head>
-<title>Document</title>
+<title>Evangelismo</title>
 </head>
 
 <body>
@@ -34,7 +35,7 @@
     <nav>
         <ul class="nav justify-content-center">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Active</a>
+                <a class="nav-link active" aria-current="page" href="Views/admin/admin-principal.html">Active</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
@@ -47,10 +48,66 @@
             </li>
         </ul>
     </nav>
-    <aside>
-
-    </aside>
     <main>
+        <!-- seccion de botones filtros de la galeria -->
+        <section>
+            <div class="container flex flex-col items-center gap-6">
+                <!-- radios arriba -->
+                <div class="flex flex-wrap justify-center gap-2">
+                    <div class="btn-group" role="group">
+                        <input type="radio" class="btn-check" name="btnradio" id="btnTodos" autocomplete="off" checked>
+                        <label class="btn btn-light mx-1 mb-2" for="btnTodos">Todos</label>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <input type="radio" class="btn-check" name="btnradio" id="btnVoluntarios" autocomplete="off">
+                        <label class="btn btn-light mx-1 mb-2" for="btnVoluntarios">Voluntarios</label>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <input type="radio" class="btn-check" name="btnradio" id="btnDorcas" autocomplete="off">
+                        <label class="btn btn-light mx-1 mb-2" for="btnDorcas">Dorcas</label>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <input type="radio" class="btn-check" name="btnradio" id="btnJovenes" autocomplete="off">
+                        <label class="btn btn-light mx-1 mb-2" for="btnJovenes">Jovenes</label>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <input type="radio" class="btn-check" name="btnradio" id="btnSeñoritas" autocomplete="off">
+                        <label class="btn btn-light mx-1 mb-2" for="btnSeñoritas">Señoritas</label>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <input type="radio" class="btn-check" name="btnradio" id="btnNiños" autocomplete="off">
+                        <label class="btn btn-light mx-1 mb-2" for="btnNiños">Niños</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- seccion de botones filtros de la galeria -->
+        <section>
+            <div class="container flex flex-col items-center gap-6">
+                <!-- checkboxes abajo -->
+                <div class="flex flex-wrap justify-center gap-2">
+                    <div class="btn-group" role="group">
+                        <input type="checkbox" class="btn-check" id="btnTratados" autocomplete="off">
+                        <label class="btn btn-light mx-1 mb-2" for="btnTratados">Tratados</label>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <input type="checkbox" class="btn-check" id="btnSeparadores" autocomplete="off">
+                        <label class="btn btn-light mx-1 mb-2" for="btnSeparadores">Separadores de biblia</label>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <input type="checkbox" class="btn-check" id="btnFondos" autocomplete="off">
+                        <label class="btn btn-light mx-1 mb-2" for="btnFondos">Fondos de pantalla</label>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <input type="checkbox" class="btn-check" id="btnStickers" autocomplete="off">
+                        <label class="btn btn-light mx-1 mb-2" for="btnStickers">Stickers</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- seccion de galeria -->
         <section class="container">
             <!-- Spinner de carga -->
             <div id="loading" class="loading-spinner" style="display:none;">
@@ -67,9 +124,9 @@
             </div>
         </section>
 
-        
+        <!-- seccion de preguntas frecuentas y contacto -->
         <div class="container">
-            <div class="row">
+            <div class="row col-12">
                 <!-- Secccion de preguntas frecuentes -->
                 <section class="col-sm-12 col-md-6 col-lg-6 mb-4">
                     <h3 class="mb-4 text-primary fw-bold">Preguntas frecuentes</h3>
@@ -195,7 +252,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="descripcion" class="form-label fw-semibold">Descripción</label>
-                                <textarea class="form-control border-0 shadow-sm rounded" id="descripcion" rows="5"
+                                <textarea class="form-control border-0 shadow-sm rounded" id="descripcion" rows="4"
                                     placeholder="Escribe tu mensaje" required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary w-100 rounded-pill shadow-sm">
@@ -207,17 +264,19 @@
             </div>
         </div>
     </main>
+
+    <!-- footer -->
     <footer class="footer text-white">
-        <div class="container py-4">
+        <div class="container">
             <div class="row">
                 <!-- Logo y descripción -->
-                <div class="col-md-4 mb-3">
-                    <img src="src/icons/icon-logo3.png" alt="Logo" width="80" class="mb-2">
+                <div class="col-md-4">
+                    <img src="src/icons/icon-logo3.png" alt="Logo" width="130" class="mb-3">
                     <p>Compartiendo el mensaje y recursos para la evangelización. Unidos en la misión.</p>
                 </div>
 
                 <!-- Enlaces rápidos -->
-                <div class="col-md-4 mb-3">
+                <div class="col-md-4">
                     <h5>Enlaces</h5>
                     <ul class="list-unstyled">
                         <li><a href="#" class="footer-link">Home</a></li>
@@ -229,9 +288,9 @@
                 </div>
 
                 <!-- Redes sociales -->
-                <div class="col-md-4 mb-3">
+                <div class="col-md-4">
                     <h5>Síguenos</h5>
-                    <div class="social-icons">
+                    <div class="social-icons mt-2">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>

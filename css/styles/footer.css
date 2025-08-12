@@ -9,13 +9,16 @@
 }
 
 .footer p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: #ccc;
+    line-height: 1.5;
 }
 
 .footer-link {
     color: #ccc;
     text-decoration: none;
+    display: block;
+    padding: 4px 0;
     transition: color 0.3s;
 }
 
@@ -25,8 +28,8 @@
 
 .social-icons a {
     display: inline-block;
-    margin-right: 10px;
-    font-size: 1.3rem;
+    margin-right: 15px;
+    font-size: 1.4rem;
     color: #ccc;
     transition: color 0.3s, transform 0.3s;
 }
@@ -37,27 +40,11 @@
 }
 
 @media (max-width: 768px) {
-    .footer h5 {
-        font-weight: bold;
-        margin-bottom: 1rem;
-        text-align: center; /* centra texto del título */
-    }
-
     .footer p {
-        font-size: 0.9rem;
-        color: #ccc;
-        text-align: center; /* centra el párrafo */
-    }
-
-    .social-icons {
-        text-align: center; /* centra el contenedor de íconos */
+        text-align: center;
     }
 
     .social-icons a {
-        display: inline-block;
         margin-right: 10px;
-        font-size: 1.3rem;
-        color: #ccc;
-        transition: color 0.3s, transform 0.3s;
     }
 }
