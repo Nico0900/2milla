@@ -1,0 +1,26 @@
+.redes-cuadrado {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  grid-template-rows: repeat(2, 1fr);    /* 2 filas */
+  gap: 10px;                            /* espacio entre cuadros */
+  max-width: 300px;                    /* ancho máximo del cuadrado */
+  margin-bottom: 20px;                 /* espacio debajo del cuadrado */
+}
+
+.redes-cuadrado a {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.5s ease;
+}
+
+.redes-cuadrado a:hover {
+    transform: scale(1.05);
+}
+
+.redes-cuadrado img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
