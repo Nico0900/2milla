@@ -1,4 +1,4 @@
-fetch('http://127.0.0.1:8000/archivos-imagenes/')
+fetch('http://13.59.52.164:8000/archivos-imagenes/')
   .then(res => res.json())
   .then(data => {
     console.log("Respuesta API:", data); // 👈 Ver qué estructura trae

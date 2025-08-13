@@ -7,7 +7,7 @@ const btnCerrar = document.getElementById("cerrarModal");
 
 loading.style.display = "block";  // Mostrar spinner
 
-fetch('http://127.0.0.1:8000/archivos-imagenes/')
+fetch('http://13.59.52.164:8000/archivos-imagenes/')
   .then(res => {
     if (!res.ok) throw new Error("Error en la respuesta de la API");
     return res.json();
@@ -27,8 +27,8 @@ fetch('http://127.0.0.1:8000/archivos-imagenes/')
       img.addEventListener("click", () => abrirModal(item.url));
 
       // Construir la URL con la nueva ruta de descarga con CORS
-      const relativePath = item.url.replace("http://127.0.0.1:8000/archivos-imagenes/", "");
-      const downloadUrl = `http://127.0.0.1:8000/archivos-imagenes/serve/${relativePath}`;
+      const relativePath = item.url.replace("http://13.59.52.164:8000/archivos-imagenes/", "");
+      const downloadUrl = `http://13.59.52.164:8000/archivos-imagenes/serve/${relativePath}`;
 
       // Enlace de descarga (manteniendo diseño)
       const aDescargar = document.createElement("a");
