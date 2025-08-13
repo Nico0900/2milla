@@ -1,11 +1,3 @@
-/* Contenedor que centra los botones */
-.container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding: 10px 0;
-}
 
 /* Estilo base para labels de btn-check (radio y checkbox) */
 .btn-check+.btn-light {
