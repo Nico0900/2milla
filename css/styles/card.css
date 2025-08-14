@@ -1,0 +1,60 @@
+.card {
+    border: none;
+    border-radius: 1rem; /* más redondeado */
+    overflow: hidden;
+    min-height: 400px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+}
+
+.card-has-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(20%);
+    transition: all 0.5s ease;
+}
+
+.card-has-bg:hover {
+    filter: grayscale(0%);
+    transform: scale(0.98);
+}
+
+.card-img-overlay {
+    background: rgba(53, 57, 61, 0.479);
+    transition: background 0.5s ease;
+}
+
+.card-has-bg:hover .card-img-overlay {
+    background: rgba(53, 57, 61, 0.479);
+}
+
+/* Texto siempre blanco */
+.card-title a,
+.card-meta,
+.card-body small,
+.card-footer h6,
+.card-footer small {
+    color: #fff !important;
+    text-decoration: none;
+}
+
+/* Imagen de icono circular */
+.card-footer img {
+    border: 2px solid #fff;
+    filter: brightness(0) invert(1); /* Hace blanco el icono si es PNG/negro */
+    background-color: transparent;
+}
+
+
+@media (max-width: 768px) {
+    .card {
+        min-height: 350px;
+    }
+}
+
+@media (max-width: 420px) {
+    .card {
+        min-height: 300px;
+    }
+}

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/styles/carousel.css">
     <link rel="stylesheet" href="css/styles/navbar.css">
     <link rel="stylesheet" href="css/styles/galeria.css">
+    <link rel="stylesheet" href="css/styles/card.css">
     <link rel="stylesheet" href="css/styles/forms.css">
     <link rel="stylesheet" href="css/styles/footer.css">
     <link rel="stylesheet" href="css/styles/boton-flotante.css">
@@ -44,7 +45,7 @@
                         <a class="nav-link" href="#material">Material de Evangelismo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#plan">Plan de Salvación</a>
+                        <a class="nav-link disabled" aria-disabled="true" href="#plandesalvacion">Plan de Salvación</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#talleres">Talleres</a>
@@ -104,12 +105,10 @@
                 <p>Cargando imágenes...</p>
             </div>
 
-            
-
             <!-- Contenedores de paginación (JS los llenará dinámicamente) -->
             <div class="container mb-1 mt-5">
                 <div class="row">
-                    <div class="col-md-6 justify-content-star">
+                    <div class="col-md-6 justify-content-start">
                         <h3 class="text-primary fw-bold seccion-titulo">Material de Evangelismo</h3>
                     </div>
                     <div class="col-md-6">
@@ -133,24 +132,123 @@
         </section>
 
         <!-- seccion de plan de salvacion -->
-        <section id="plan">
+        <section id="plandesalvacion">
         </section>
 
         <!-- seccion de talleres -->
-        <section id="talleres">
+        <section id="talleres" class="py-5">
+            <h3 class="text-primary fw-bold seccion-titulo">Talleres de evangelismo</h3>
+            <div class="container"> <!-- Usando container de Bootstrap -->
+                <div class="row g-4"> <!-- g-4 para espacio entre columnas -->
+                    <div class="col-sm-12 col-md-6 col-lg-3">
+                        <div class="card text-dark card-has-bg" style="background-image:url('src/images/2.jpg');">
+                            <div class="card-img-overlay d-flex flex-column justify-content-between">
+                                <div class="card-body">
+                                    <small class="card-meta mb-2">Taller de evangelización</small>
+                                    <h4 class="card-title mt-0">
+                                        <a class="text-white" href="#">Siguiendo la senda del rey</a>
+                                    </h4>
+                                    <small><i class="far fa-clock"></i> 13 de Agosto - 2025</small>
+                                </div>
+                                <div class="card-footer bg-transparent border-0">
+                                    <div class="d-flex align-items-center">
+                                        <img class="rounded-circle me-3" src="src/icons/icon.png" alt="Hna Camila"
+                                            style="width:50px; height:50px; object-fit:cover;">
+                                        <div>
+                                            <h6 class="mb-0 text-white">Hna Camila</h6>
+                                            <small>Evangelismo</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-3">
+                        <div class="card text-dark card-has-bg" style="background-image:url('src/images/2.jpg');">
+                            <div class="card-img-overlay d-flex flex-column justify-content-between">
+                                <div class="card-body">
+                                    <small class="card-meta mb-2">Taller de evangelización</small>
+                                    <h4 class="card-title mt-0">
+                                        <a class="text-white" href="#">Siguiendo la senda del rey</a>
+                                    </h4>
+                                    <small><i class="far fa-clock"></i> 13 de Agosto - 2025</small>
+                                </div>
+                                <div class="card-footer bg-transparent border-0">
+                                    <div class="d-flex align-items-center">
+                                        <img class="rounded-circle me-3" src="src/icons/icon.png" alt="Hna Camila"
+                                            style="width:50px; height:50px; object-fit:cover; color: white;">
+                                        <div>
+                                            <h6 class="mb-0 text-white">Hna Camila</h6>
+                                            <small>Evangelismo</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-3">
+                        <div class="card text-dark card-has-bg" style="background-image:url('src/images/2.jpg');">
+                            <div class="card-img-overlay d-flex flex-column justify-content-between">
+                                <div class="card-body">
+                                    <small class="card-meta mb-2">Taller de evangelización</small>
+                                    <h4 class="card-title mt-0">
+                                        <a class="text-white" href="#">Siguiendo la senda del rey</a>
+                                    </h4>
+                                    <small><i class="far fa-clock"></i> 13 de Agosto - 2025</small>
+                                </div>
+                                <div class="card-footer bg-transparent border-0">
+                                    <div class="d-flex align-items-center">
+                                        <img class="rounded-circle me-3" src="src/icons/icon.png" alt="Hna Camila"
+                                            style="width:50px; height:50px; object-fit:cover;">
+                                        <div>
+                                            <h6 class="mb-0 text-white">Hna Camila</h6>
+                                            <small>Evangelismo</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-3">
+                        <div class="card text-dark card-has-bg" style="background-image:url('src/images/2.jpg');">
+                            <div class="card-img-overlay d-flex flex-column justify-content-between">
+                                <div class="card-body">
+                                    <small class="card-meta mb-2">Taller de evangelización</small>
+                                    <h4 class="card-title mt-0">
+                                        <a class="text-white" href="#">Siguiendo la senda del rey</a>
+                                    </h4>
+                                    <small><i class="far fa-clock"></i> 13 de Agosto - 2025</small>
+                                </div>
+                                <div class="card-footer bg-transparent border-0">
+                                    <div class="d-flex align-items-center">
+                                        <img class="rounded-circle me-3" src="src/icons/icon.png" alt="Hna Camila"
+                                            style="width:50px; height:50px; object-fit:cover;">
+                                        <div>
+                                            <h6 class="mb-0 text-white">Hna Camila</h6>
+                                            <small>Evangelismo</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Repetir las demás tarjetas con diferentes imágenes -->
+                </div>
+            </div>
         </section>
+
 
         <!-- seccion de preguntas frecuentas y contacto -->
         <section id="preguntas">
-            <div class="row col-12">
+            <div class="row justify-content-center">
                 <!-- Secccion de preguntas frecuentes -->
-                <section class="col-sm-12 col-md-6 col-lg-6 mb-4">
+                <section class="col-12 col-sm-12 col-md-6 col-lg-6 mb-4">
                     <h3 class="mb-4 text-primary fw-bold seccion-titulo">Preguntas frecuentes</h3>
                     <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                     Pregunta Frecuente N°1
                                 </button>
                             </h2>
@@ -184,7 +282,7 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    data-bs-target="#collapseThree" aria-expanded="faThree" aria-controls="collapseTwo">
                                     Pregunta Frecuente N°3
                                 </button>
                             </h2>
@@ -218,7 +316,7 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseThree">
+                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseTwo">
                                     Pregunta Frecuente N°5
                                 </button>
                             </h2>
@@ -235,7 +333,7 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseThree">
+                                    data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseTwo">
                                     Pregunta Frecuente N°6
                                 </button>
                             </h2>
@@ -252,7 +350,7 @@
                     </div>
                 </section>
                 <!-- Contáctanos -->
-                <section class="col-sm-12 col-md-6 col-lg-6">
+                <section class="col-12 col-sm-12 col-md-6 col-lg-6 mb-4">
                     <h3 class="mb-4 text-primary fw-bold seccion-titulo">Contáctanos</h3>
                     <div class="p-4 shadow-sm rounded bg-light">
                         <form>
@@ -297,7 +395,7 @@
                     <ul class="list-unstyled">
                         <li><a href="#" class="footer-link">Home</a></li>
                         <li><a href="#material" class="footer-link">Material de Evangelismo</a></li>
-                        <li><a href="#plan" class="footer-link">Plan de Salvación</a></li>
+                        <li><a href="#plandesalvacion" class="footer-link">Plan de Salvación</a></li>
                         <li><a href="#talleres" class="footer-link">Talleres</a></li>
                         <li><a href="#preguntas" class="footer-link">¿Tienes preguntas?</a></li>
                     </ul>
@@ -330,7 +428,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- apis -->
-    <script src="controllers/Api/gallery.js"></script>
+    <script src="controllers/gallery.js"></script>
 
     <!-- canva -->
     <script src="controllers/Canva.js"></script>
