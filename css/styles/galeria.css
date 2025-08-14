@@ -9,33 +9,28 @@
   background: rgba(255, 255, 255, 0.8);
   padding: 20px 40px;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
-
 
 .galeria {
   columns: 5 120px;
   column-gap: 1rem;
-  margin-top: 2rem;
   margin-bottom: 2rem;
-  /* Eliminé grid-template-columns porque columns ya hace la magia */
 }
 
 .galeria-item {
   position: relative;
   margin-bottom: 1rem;
-  break-inside: avoid; /* para evitar que los items se partan en columnas */
+  break-inside: avoid;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .galeria-item img {
   width: 100%;
   display: block;
   border-radius: 10px;
-  /* outline: solid white;
-  outline-offset: -15px; */
   transition: transform 0.2s ease;
 }
 
@@ -69,7 +64,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -153,4 +148,18 @@
 
 .cerrar:hover {
   transform: scale(1.05);
+}
+
+.pagination{
+  justify-content: end !important;
+}
+
+
+/* Colocar el botón a la izquierda en móviles */
+@media (max-width: 560px) {
+
+  .pagination{
+    justify-content: center !important;
+  }
+
 }
