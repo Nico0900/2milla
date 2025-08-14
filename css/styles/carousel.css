@@ -1,0 +1,50 @@
+/* Mantener relación 21:9 */
+.carousel-img {
+    width: 100%;
+    aspect-ratio: 21 / 9;
+    object-fit: cover;
+}
+
+/* Bordes redondeados */
+#carouselExample {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative; /* Para overlay */
+}
+
+/* Overlay negro sobre todo el carrusel */
+.carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.37);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    padding: 1rem;
+}
+
+/* Imagen o texto centrado en overlay */
+.overlay-img {
+    max-width: 140%;
+    height: auto;
+}
+
+/* Texto opcional sobre overlay */
+.overlay-content {
+    color: white;
+    font-size: 5vw; /* Escala con el ancho de la pantalla */
+    font-weight: bold;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    .overlay-content {
+        font-size: 10vw; /* Más grande proporcionalmente en móviles */
+    }
+}

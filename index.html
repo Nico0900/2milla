@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="css/styles/style.css">
     <link rel="icon" href="src/icons/icon-logo3.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/Canva.css">
+    <link rel="stylesheet" href="css/styles/carousel.css">
+    <link rel="stylesheet" href="css/styles/navbar.css">
     <link rel="stylesheet" href="css/styles/galeria.css">
-    <link rel="stylesheet" href="css/styles/footer.css">
     <link rel="stylesheet" href="css/styles/forms.css">
-    <link rel="stylesheet" href="css/styles/button.css">
+    <link rel="stylesheet" href="css/styles/footer.css">
+    <link rel="stylesheet" href="css/styles/boton-flotante.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <link
@@ -23,98 +25,83 @@
 
 <body>
     <canvas id="c"></canvas>
-    <!-- <header>
-        <ul>
-            <li>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fas fa-envelope"></i></a>
-            </li>
-        </ul>
-    </header> -->
-    <nav>
-        <ul class="nav justify-content-center">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="Views/admin/admin-principal.html">Active</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            </li>
-        </ul>
+    <nav class="navbar pt-3">
+        <div class="container navbar navbar-expand-lg bg-light rounded-3">
+            <!-- Botón de menú para móviles -->
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i> <!-- Ícono distinto -->
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#material">Material de Evangelismo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#plan">Plan de Salvación</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#talleres">Talleres</a>
+                    </li>
+                </ul>
+
+                <!-- Link “Tienes Preguntas” junto al botón login -->
+                <div class="d-flex align-items-center gap-3">
+                    <a href="#preguntas" class="nav-link preguntas-link">¿Tienes Preguntas?</a>
+                    <a href="#" class="boton-login">
+                        <i class="fa-solid fa-user"></i> Iniciar Sesión
+                    </a>
+                </div>
+            </div>
+        </div>
     </nav>
-    <main>
-        <!-- seccion de botones filtros de la galeria -->
-        <section>
-            <div class=".container flex flex-col items-center gap-6">
-                <!-- radios arriba -->
-                <div class="flex flex-wrap justify-center gap-2">
-                    <div class="btn-group" role="group">
-                        <input type="radio" class="btn-check" name="btnradio" id="btnTodos" autocomplete="off" checked>
-                        <label class="btn btn-light mx-1 mb-2" for="btnTodos">Todos</label>
+
+
+    <!-- Cuerpo de Pagina -->
+    <main class="container mt-1">
+
+        <!-- seccion de carousel -->
+        <section id="carrousel" class="my-4 position-relative">
+            <div id="carouselExample" class="carousel slide rounded-4 overflow-hidden" data-bs-ride="carousel"
+                data-bs-interval="3000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="src/images/1.jpg" class="d-block w-100 carousel-img" alt="Imagen 1">
                     </div>
-                    <div class="btn-group" role="group">
-                        <input type="radio" class="btn-check" name="btnradio" id="btnVoluntarios" autocomplete="off">
-                        <label class="btn btn-light mx-1 mb-2" for="btnVoluntarios">Voluntarios</label>
+                    <div class="carousel-item">
+                        <img src="src/images/2.jpg" class="d-block w-100 carousel-img" alt="Imagen 2">
                     </div>
-                    <div class="btn-group" role="group">
-                        <input type="radio" class="btn-check" name="btnradio" id="btnDorcas" autocomplete="off">
-                        <label class="btn btn-light mx-1 mb-2" for="btnDorcas">Dorcas</label>
+                    <div class="carousel-item">
+                        <img src="src/images/3.jpg" class="d-block w-100 carousel-img" alt="Imagen 3">
                     </div>
-                    <div class="btn-group" role="group">
-                        <input type="radio" class="btn-check" name="btnradio" id="btnJovenes" autocomplete="off">
-                        <label class="btn btn-light mx-1 mb-2" for="btnJovenes">Jovenes</label>
-                    </div>
-                    <div class="btn-group" role="group">
-                        <input type="radio" class="btn-check" name="btnradio" id="btnSeñoritas" autocomplete="off">
-                        <label class="btn btn-light mx-1 mb-2" for="btnSeñoritas">Señoritas</label>
-                    </div>
-                    <div class="btn-group" role="group">
-                        <input type="radio" class="btn-check" name="btnradio" id="btnNiños" autocomplete="off">
-                        <label class="btn btn-light mx-1 mb-2" for="btnNiños">Niños</label>
-                    </div>
+                </div>
+
+                <!-- Overlay sobre todo el carrusel -->
+                <div class="carousel-overlay">
+                    <!-- Puedes poner imagen o texto -->
+                    <img src="src/TAPA-LETRA-BLANCA.png" alt="" class="overlay-img">
+                    <!-- o <div class="overlay-content">Caminando la 2da milla</div> -->
                 </div>
             </div>
         </section>
 
-        <!-- seccion de botones filtros de la galeria -->
-        <section>
-            <div class=".container flex flex-col items-center gap-6">
-                <!-- checkboxes abajo -->
-                <div class="flex flex-wrap justify-center gap-2">
-                    <div class="btn-group" role="group">
-                        <input type="checkbox" class="btn-check" id="btnTratados" autocomplete="off">
-                        <label class="btn btn-light mx-1 mb-2" for="btnTratados">Tratados</label>
-                    </div>
-                    <div class="btn-group" role="group">
-                        <input type="checkbox" class="btn-check" id="btnSeparadores" autocomplete="off">
-                        <label class="btn btn-light mx-1 mb-2" for="btnSeparadores">Separadores de biblia</label>
-                    </div>
-                    <div class="btn-group" role="group">
-                        <input type="checkbox" class="btn-check" id="btnFondos" autocomplete="off">
-                        <label class="btn btn-light mx-1 mb-2" for="btnFondos">Fondos de pantalla</label>
-                    </div>
-                    <div class="btn-group" role="group">
-                        <input type="checkbox" class="btn-check" id="btnStickers" autocomplete="off">
-                        <label class="btn btn-light mx-1 mb-2" for="btnStickers">Stickers</label>
-                    </div>
-                </div>
-            </div>
-        </section>
+
+
 
         <!-- seccion de galeria -->
-        <section class="container">
+        <section id="material">
             <!-- Spinner de carga -->
             <div id="loading" class="loading-spinner" style="display:none;">
                 <i class="fas fa-spinner fa-spin fa-3x"></i>
                 <p>Cargando imágenes...</p>
             </div>
 
+            <h3 class="mb-4 text-primary fw-bold seccion-titulo">Material de Evangelismo</h3>
             <div id="galeria" class="galeria"></div>
 
             <!-- Modal para vista ampliada -->
@@ -124,12 +111,20 @@
             </div>
         </section>
 
+        <!-- seccion de plan de salvacion -->
+        <section id="plan">
+        </section>
+
+        <!-- seccion de talleres -->
+        <section id="talleres">
+        </section>
+
         <!-- seccion de preguntas frecuentas y contacto -->
-        <div class="container">
+        <section id="preguntas">
             <div class="row col-12">
                 <!-- Secccion de preguntas frecuentes -->
                 <section class="col-sm-12 col-md-6 col-lg-6 mb-4">
-                    <h3 class="mb-4 text-primary fw-bold">Preguntas frecuentes</h3>
+                    <h3 class="mb-4 text-primary fw-bold seccion-titulo">Preguntas frecuentes</h3>
                     <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
@@ -237,7 +232,7 @@
                 </section>
                 <!-- Contáctanos -->
                 <section class="col-sm-12 col-md-6 col-lg-6">
-                    <h3 class="mb-4 text-primary fw-bold">Contáctanos</h3>
+                    <h3 class="mb-4 text-primary fw-bold seccion-titulo">Contáctanos</h3>
                     <div class="p-4 shadow-sm rounded bg-light">
                         <form>
                             <div class="mb-3">
@@ -262,7 +257,7 @@
                     </div>
                 </section>
             </div>
-        </div>
+        </section>
     </main>
 
     <!-- footer -->
@@ -280,10 +275,10 @@
                     <h5>Enlaces</h5>
                     <ul class="list-unstyled">
                         <li><a href="#" class="footer-link">Home</a></li>
-                        <li><a href="#" class="footer-link">Material de Evangelismo</a></li>
-                        <li><a href="#" class="footer-link">Plan de Salvación</a></li>
-                        <li><a href="#" class="footer-link">Talleres</a></li>
-                        <li><a href="#" class="footer-link">Contáctanos</a></li>
+                        <li><a href="#material" class="footer-link">Material de Evangelismo</a></li>
+                        <li><a href="#plan" class="footer-link">Plan de Salvación</a></li>
+                        <li><a href="#talleres" class="footer-link">Talleres</a></li>
+                        <li><a href="#preguntas" class="footer-link">¿Tienes preguntas?</a></li>
                     </ul>
                 </div>
 
@@ -303,6 +298,12 @@
             </div>
         </div>
     </footer>
+
+    <!-- Botón flotante -->
+    <a href="#" class="boton-flotante">
+        <i class="fa-solid fa-arrow-up"></i> Inicio
+    </a>
+
 
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>

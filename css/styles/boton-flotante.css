@@ -1,0 +1,33 @@
+.boton-flotante {
+    position: fixed;
+    /* Fijo en la pantalla */
+    bottom: 30px;
+    /* Espacio sobre el footer */
+    right: 60px;
+    /* Alineado a la derecha */
+    background-color: #4a90e2;
+    /* Azul moderno */
+    color: white;
+    padding: 12px 18px;
+    border-radius: 50px;
+    /* Bordes redondeados */
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Espacio entre icono y texto */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, background-color 0.3s;
+    z-index: 1000;
+    /* Por encima de otros elementos */
+}
+
+.boton-flotante:hover {
+    background-color: #357ab8;
+    transform: translateY(-2px);
+}
+
+.boton-flotante i {
+    font-size: 16px;
+}

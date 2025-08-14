@@ -7,7 +7,7 @@ const btnCerrar = document.getElementById("cerrarModal");
 
 loading.style.display = "block";  // Mostrar spinner
 
-fetch('http://13.59.52.164:8000/archivos-imagenes/')
+fetch('http://127.0.0.1:8000/archivos-imagenes/')
   .then(res => {
     if (!res.ok) throw new Error("Error en la respuesta de la API");
     return res.json();
@@ -20,29 +20,25 @@ fetch('http://13.59.52.164:8000/archivos-imagenes/')
       divItem.classList.add("galeria-item");
 
       const img = document.createElement("img");
-      img.src = item.url; // sigue mostrando la imagen original
+      img.src = item.url; // <-- usar URL completa directamente
       img.alt = item.name || "Imagen de galería";
 
       // Abrir modal con imagen al click
       img.addEventListener("click", () => abrirModal(item.url));
 
-      // Construir la URL con la nueva ruta de descarga con CORS
-      const relativePath = item.url.replace("http://13.59.52.164:8000/archivos-imagenes/", "");
-      const downloadUrl = `http://13.59.52.164:8000/archivos-imagenes/serve/${relativePath}`;
-
-      // Enlace de descarga (manteniendo diseño)
+      // Enlace de descarga directo usando la misma URL
       const aDescargar = document.createElement("a");
-      aDescargar.href = downloadUrl;
+      aDescargar.href = item.url;
       aDescargar.download = item.name || "imagen";
       aDescargar.classList.add("descargar-icon");
       aDescargar.title = "Descargar imagen";
       aDescargar.innerHTML = '<i class="fas fa-download"></i>';
 
-      // Forzar descarga con fetch + blob (sin CORS error)
+      // Forzar descarga con fetch + blob para evitar problemas de CORS
       aDescargar.addEventListener("click", (e) => {
         e.preventDefault();
         e.stopPropagation();
-        fetch(downloadUrl)
+        fetch(item.url)
           .then(response => {
             if (!response.ok) throw new Error("Error al descargar la imagen");
             return response.blob();
@@ -62,7 +58,6 @@ fetch('http://13.59.52.164:8000/archivos-imagenes/')
 
       divItem.appendChild(img);
       divItem.appendChild(aDescargar);
-
       contenedor.appendChild(divItem);
     });
   })

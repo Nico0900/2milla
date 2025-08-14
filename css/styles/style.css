@@ -41,3 +41,27 @@ body {
     }
 }
 
+
+
+/* titulos! */
+
+.seccion-titulo {
+    position: relative;
+    padding-bottom: 12px;
+    /* Espacio entre el texto y la línea */
+}
+
+.seccion-titulo::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 150px;
+    /* Longitud de la línea */
+    height: 4px;
+    /* Grosor de la línea */
+    background-color: #4a90e2;
+    /* Azul */
+    border-radius: 2px;
+    /* Bordes redondeados */
+}

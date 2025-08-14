@@ -1,0 +1,129 @@
+/* Estilo del botón hamburger en móviles */
+.custom-toggler {
+    border: none;
+    /* Sin borde */
+    background: transparent;
+    /* Sin fondo */
+    font-size: 1.5rem;
+    /* Tamaño del icono */
+    color: #000;
+    /* Color del icono */
+}
+
+/* Colocar el botón a la izquierda en móviles */
+@media (max-width: 560px) {
+
+    /* Bootstrap lg breakpoint */
+    .navbar .custom-toggler {
+        order: -1;
+        /* Mover al inicio */
+    }
+
+    .navbar.container {
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+}
+
+/* Aplica borde redondeado y un poco de sombra para que se vea más elegante */
+.navbar.container {
+    border-radius: 12px;
+    /* Ajusta el valor según tu gusto */
+    overflow: hidden;
+    /* Para que los hijos no sobresalgan */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Opcional: sombra suave */
+}
+
+/* Si quieres redondear solo las esquinas superiores o inferiores */
+.navbar.container {
+    padding-left: 12px;
+    padding-right: 12px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+/* Links del menú sin background */
+.navbar-nav .nav-link {
+    position: relative;
+    /* Necesario para la línea animada */
+    text-decoration: none;
+    /* Quita subrayado por defecto */
+    color: #333;
+    /* Color del texto */
+    font-weight: 500;
+    padding: 6px 12px;
+    transition: color 0.3s ease;
+}
+
+/* Línea animada */
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    /* Grosor de la línea */
+    background-color: #4a90e2;
+    /* Color azul suave */
+    transition: width 0.3s ease;
+}
+
+/* Al pasar el cursor, la línea se expande */
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Cambiar color del texto ligeramente al hover */
+.navbar-nav .nav-link:hover {
+    color: #4a90e2;
+}
+
+
+/* boton de login */
+
+/* Estilo para el botón de login */
+.boton-login {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Espacio entre el icono y el texto */
+    padding: 8px 16px;
+    background-color: #4a90e2;
+    /* Azul agradable */
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.boton-login:hover {
+    background-color: #357ab8;
+    /* Azul más oscuro al pasar el mouse */
+    transform: translateY(-2px);
+}
+
+.boton-login i {
+    font-size: 16px;
+}
+
+/* Si quieres un efecto de clic */
+.boton-login:active {
+    transform: translateY(0);
+    background-color: #2e5a8a;
+}
+
+
+/* Preguntas frecuentas */
+
+/* Para alinear correctamente el link al lado del botón */
+.preguntas-link {
+    color: #333;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s;
+}
